@@ -1,0 +1,1031 @@
+\makeatletter
+
+\RequirePackage{geometry}
+\RequirePackage{longtable}
+\RequirePackage{fancyvrb}
+\RequirePackage{array}
+\RequirePackage{hyperref}
+\RequirePackage{graphicx}
+\RequirePackage{ifthen}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+   \pdffalse
+\else
+   \pdfoutput=1
+   \pdftrue
+\fi
+
+\newbox\sas@fig
+\newlength\sas@figwidth
+
+\newif\ifsas@color
+\sas@colorfalse
+
+\DeclareOption{color}{\sas@colortrue}
+\ProcessOptions
+
+\def\sasAfterCaption{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasBatch{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasBeforeCaption{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasBody{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasBodyDate{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasByContentFolder{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasByline{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasBylineContainer{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasCaption{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasCell{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasContainer{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasContentFolder{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasContentItem{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+}
+\def\sasContentProcLabel{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasContentProcName{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasContents{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasContentsDate{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasContentTitle{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasContinued{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasData{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDataEmphasis{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDataEmphasisFixed{%
+   \footnotesize%
+   \itshape%
+   \ttfamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDataEmpty{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDataFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDataStrong{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDataStrongFixed{%
+   \footnotesize%
+   \bfseries%
+   \ttfamily%
+   \color[rgb]{0,0,0}%
+   \columncolor[rgb]{0.82,0.82,0.82}%
+}
+\def\sasDate{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasDocument{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasErrorBanner{%
+   \small%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasErrorContent{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasErrorContentFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasExtendedPage{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasFatalBanner{%
+   \small%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasFatalContent{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasFatalContentFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasFolderAction{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+}
+\def\sasFooter{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFooterEmphasis{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFooterEmphasisFixed{%
+   \footnotesize%
+   \itshape%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFooterEmpty{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFooterFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFooterStrong{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFooterStrongFixed{%
+   \footnotesize%
+   \bfseries%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasFrame{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasGraph{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasHeader{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeaderEmphasis{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeaderEmphasisFixed{%
+   \footnotesize%
+   \itshape%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeaderEmpty{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeaderFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeadersAndFooters{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeaderStrong{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasHeaderStrongFixed{%
+   \footnotesize%
+   \bfseries%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasIndex{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasIndexAction{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+}
+\def\sasIndexItem{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+}
+\def\sasIndexProcName{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasIndexTitle{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasLayoutContainer{%
+}
+\def\sasLayoutRegion{%
+}
+\def\sasList{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListBA{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListC{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListD{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListE{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListF{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListG{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListH{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListI{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListJ{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItem{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemBA{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemC{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemD{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemE{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemF{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemG{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemH{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemI{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasListItemJ{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasNote{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasNoteBanner{%
+   \small%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasNoteContent{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasNoteContentFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasOutput{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.94,0.94,0.94}%
+}
+\def\sasPageNo{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasPages{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasPagesDate{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasPagesItem{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+}
+\def\sasPagesProcLabel{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasPagesProcName{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasPagesTitle{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+}
+\def\sasParagraph{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasParskip{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+}
+\def\sasPrePage{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasProcTitle{%
+   \normalsize%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasProcTitleFixed{%
+   \footnotesize%
+   \bfseries%
+   \ttfamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasRowFooter{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowFooterEmphasis{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowFooterEmphasisFixed{%
+   \footnotesize%
+   \itshape%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowFooterEmpty{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowFooterFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowFooterStrong{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowFooterStrongFixed{%
+   \footnotesize%
+   \bfseries%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeader{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeaderEmphasis{%
+   \small%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeaderEmphasisFixed{%
+   \footnotesize%
+   \itshape%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeaderEmpty{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeaderFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeaderStrong{%
+   \normalsize%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasRowHeaderStrongFixed{%
+   \footnotesize%
+   \bfseries%
+   \ttfamily%
+   \color[rgb]{0,0.2,0.66}%
+   \columncolor[rgb]{0.69,0.69,0.69}%
+}
+\def\sasSystemFooter{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterBA{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterC{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterD{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterE{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterF{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterG{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterH{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterI{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemFooterJ{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitle{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleBA{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleC{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleD{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleE{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleF{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleG{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleH{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleI{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSystemTitleJ{%
+   \large%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasSysTitleAndFooterContainer{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasTable{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.94,0.94,0.94}%
+}
+\def\sasTitleAndNoteContainer{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasTitlesAndFooters{%
+   \normalsize%
+   \bfseries%
+   \itshape%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasUserText{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasWarnBanner{%
+   \small%
+   \bfseries%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasWarnContent{%
+   \small%
+   \sffamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+\def\sasWarnContentFixed{%
+   \footnotesize%
+   \ttfamily%
+   \color[rgb]{0,0.13,0.53}%
+   \columncolor[rgb]{0.87,0.87,0.87}%
+}
+% Add .jpeg as a valid image extension
+\ifpdf
+    \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
+    \DeclareGraphicsRule{.jpeg}{jpg}{.jpeg}{}
+\fi
+
+% Set cell padding
+\renewcommand{\arraystretch}{1.3}
+
+% Headings
+\newcommand{\sasheading}[3][c]{{%
+   \if#1r\flushright\else\if#1l\flushleft\else\center\fi\fi%
+   {\csname sas#2\endcsname #3}%
+   \if#1r\endflushright\else\if#1l\endflushleft\else\endcenter\fi\fi%
+}}
+
+\newcommand{\sasbyline}[2][c]{\sasheading[#1]{Byline}{#2}}
+\newcommand{\sassystemtitle}[2][c]{\mysection{#2}\fontsize{8pt}{8pt}\selectfont}
+\newcommand{\sassystemfooter}[2][c]{\sasheading[#1]{SystemFooter}{#2}}
+\newcommand{\sasproctitle}[2][c]{}
+\newcommand{\sascaption}[2][l]{\marginpar[#1]{\fbox{\parbox{0.7in}{\sasCaption{#2}}}}}
+
+% Declare new verbatim type
+\DefineVerbatimEnvironment{sasverbatim}{BVerbatim}%
+                          {fontsize=\footnotesize,
+                           commandchars=\\\{\},
+                           formatcom=\sasBatch}
+
+% Declare new column types
+\newcolumntype{S}[2]{>{\csname sas#1\endcsname}#2}
+\newcolumntype{d}{r}
+
+% Set warning box style
+\newlength\notewidth
+\setlength\notewidth{4in}
+\newcommand*{\saswarning}[2][c]{\sasmsg{Warning}{#1}{#2}}
+\newcommand*{\saserror}[2][c]{\sasmsg{Error}{#1}{#2}}
+\newcommand*{\sasnote}[2][c]{\sasmsg{Note}{#1}{#2}}
+\newcommand*{\sasfatal}[2][c]{\sasmsg{Fatal}{#1}{#2}}
+\newcommand*{\sasmsg}[3]{%
+   \ifsas@color\let\columncolor\undefined\fi%
+   \begin{center}%
+   \begin{tabular}{ll}\hline%
+   \multicolumn{1}{|S{#1Banner}{p{0.7in}}|}{#1} & %
+   \multicolumn{1}{|S{#1Content}{p{\notewidth}}|}{#3{\newline}}\\\hline%
+   \end{tabular}%
+   \end{center}%
+   \ifsas@color\let\columncolor\sascolumncolor\fi%
+}
+
+\ifsas@color\RequirePackage{colortbl}\fi
+
+% Hack colortbl to allow \columncolor in macros
+\let\CT@extract@org\CT@extract
+\def\CT@extract{\futurelet\CT@NEXT\CT@extract@next}
+\def\CT@extract@next{%
+  \ifx\CT@NEXT\csname
+    \@ReturnAfterFi{%
+      \expandafter\expandafter\expandafter
+    }%
+  \fi
+  \CT@extract@org
+}
+\long\def\@ReturnAfterFi#1\fi{\fi#1}
+
+\ifsas@color
+
+   \newcommand{\foreground}[1]{\color[rgb]{#1}}
+   \newcommand{\sascolumncolor}[2][]{}
+   \let\columncolor\sascolumncolor
+   \newcommand{\documentforeground}[1]{\AtBeginDocument{\color[rgb]{#1}}}
+   \newcommand{\documentbackground}[1]{\AtBeginDocument{\pagecolor[rgb]{#1}}}
+   \def\sastable{\let\columncolor\undefined\longtable}
+   \def\endsastable{\endlongtable\let\columncolor\sascolumncolor}
+   \def\stackedcell{\bgroup\renewcommand{\arraystretch}{1}\tabular}
+   \def\endstackedcell{\endtabular\egroup}
+
+\else
+
+   \newcommand{\foreground}[1]{}
+   \newcommand{\sascolumncolor}[2][]{}
+   \let\columncolor\sascolumncolor
+   \newcommand{\documentforeground}[1]{}
+   \newcommand{\documentbackground}[1]{}
+   \def\sastable{\longtable}
+   \def\endsastable{\endlongtable}
+   \def\stackedcell{\bgroup\renewcommand{\arraystretch}{1}\tabular}
+   \def\endstackedcell{\endtabular\egroup}
+
+\fi
+
+%\let\sasgraph\includegraphics
+% Scale graphics so they always fit on the page
+\newcommand\sasgraph[2][]{%
+   \savebox{\sas@fig}{\includegraphics[#1]{#2}}%
+   \settowidth{\sas@figwidth}{\usebox{\sas@fig}}%
+   \ifthenelse{\lengthtest{\sas@figwidth > \textwidth}}{%
+      \resizebox{0.95\textwidth}{!}{\usebox{\sas@fig}}}{%
+      \usebox{\sas@fig}}
+}
+
+% Table of contents commands
+\newcounter{sastarget}
+\newcommand{\sascontents}[2][]{%
+}
+\makeatother

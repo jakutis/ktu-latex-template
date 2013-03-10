@@ -1,0 +1,160 @@
+%%
+%% This is file `lithuanian.bdf',
+%% manually created from a copy of german.bdf by Vytautas Jakutis
+%%
+%% 
+%%   babelbib package
+%% 
+%%   Copyright  2003--2009 Harald Harders
+%% 
+%%   This program can be redistributed and/or modified under the terms
+%%   of the LaTeX Project Public License Distributed from CTAN
+%%   archives in directory macros/latex/base/lppl.txt; either
+%%   version 1 of the License, or any later version.
+%% 
+%%   h.harders@tu-bs.de
+%% 
+\ProvidesFile{lithuanian.bdf}
+  [2009/10/10 v1.29  babelbib: multilingual bibliographies (HH)]
+\newcommand\bibslithuanian[1][lithuanian]{%
+  \def\biblanguagename{#1}%
+  \def\btxetalshort##1{\protect\foreignlanguage{#1}{et~al##1{}}}%
+  \def\btxetallong##1{\protect\foreignlanguage{#1}{et~alii}}%
+  \def\btxandshort##1{\protect\foreignlanguage{#1}{ir}}%
+  \def\btxandlong##1{\protect\foreignlanguage{#1}{ir}}%
+  \def\btxandcomma##1{}%
+  \def\btxinlong##1{\protect\foreignlanguage{#1}{iš:}}%
+  \def\btxinshort##1{\protect\foreignlanguage{#1}{iš:}}%
+  \def\btxofseriesshort##1{\protect\foreignlanguage{#1}{iš ser.}}%
+  \def\btxinseriesshort##1{\protect\foreignlanguage{#1}{ser.}}%
+  \def\btxofserieslong##1{\protect\foreignlanguage{#1}{iš serijos}}%
+  \def\btxinserieslong##1{\protect\foreignlanguage{#1}{serijoje}}%
+  \def\btxeditorshort##1{\protect\foreignlanguage{#1}{red.##1{}}}%
+  \def\btxeditorlong##1{\protect\foreignlanguage{#1}{redaktorius}}%
+  \def\btxeditorsshort##1{\protect\foreignlanguage{#1}{red.##1{}}}%
+  \def\btxeditorslong##1{\protect\foreignlanguage{#1}{redaktoriai}}%
+  \def\btxvolumeshort##1{\protect\foreignlanguage{#1}{tomas}}%
+  \def\btxvolumelong##1{\protect\foreignlanguage{#1}{tomas}}%
+  \def\btxnumbershort##1{\protect\foreignlanguage{#1}{nr##1{}}}%
+  \def\btxnumberlong##1{\protect\foreignlanguage{#1}{numeris}}%
+  \def\btxeditionshort##1{\protect\foreignlanguage{#1}{leidimas}}%
+  \def\btxeditionlong##1{\protect\foreignlanguage{#1}{leidimas}}%
+  \def\btxchaptershort##1{\protect\foreignlanguage{#1}{sk.##1{}}}%
+  \def\btxchapterlong##1{\protect\foreignlanguage{#1}{skyrius}}%
+  \def\btxpageshort##1{\protect\foreignlanguage{#1}{psl.##1{}}}%
+  \def\btxpagelong##1{\protect\foreignlanguage{#1}{puslapis}}%
+  \def\btxpagesshort##1{\protect\foreignlanguage{#1}{psl.##1{}}}%
+  \def\btxpageslong##1{\protect\foreignlanguage{#1}{puslapiai}}%
+  \def\btxmastthesis##1{\protect\foreignlanguage{#1}{Magistro darbas}}%
+  \def\btxphdthesis##1{\protect\foreignlanguage{#1}{Daktaro disertacija}}%
+  \def\btxtechrepshort##1{\protect\foreignlanguage{#1}{Techn.\ atask.##1{}}}%
+  \def\btxtechreplong##1{\protect\foreignlanguage{#1}{Techninė ataskaita}}%
+  \def\btxmonjanlong##1{\protect\foreignlanguage{#1}{Sausis}}%
+  \def\btxmonfeblong##1{\protect\foreignlanguage{#1}{Vasaris}}%
+  \def\btxmonmarlong##1{\protect\foreignlanguage{#1}{Kovas}}%
+  \def\btxmonaprlong##1{\protect\foreignlanguage{#1}{Balandis}}%
+  \def\btxmonmaylong##1{\protect\foreignlanguage{#1}{Gegužė}}%
+  \def\btxmonjunlong##1{\protect\foreignlanguage{#1}{Birželis}}%
+  \def\btxmonjullong##1{\protect\foreignlanguage{#1}{Liepa}}%
+  \def\btxmonauglong##1{\protect\foreignlanguage{#1}{Rugpjūtis}}%
+  \def\btxmonseplong##1{\protect\foreignlanguage{#1}{Rugsėjis}}%
+  \def\btxmonoctlong##1{\protect\foreignlanguage{#1}{Spalis}}%
+  \def\btxmonnovlong##1{\protect\foreignlanguage{#1}{Lapkritis}}%
+  \def\btxmondeclong##1{\protect\foreignlanguage{#1}{Gruodis}}%
+  \def\btxmonjanshort##1{\protect\foreignlanguage{#1}{Sau##1{}}}%
+  \def\btxmonfebshort##1{\protect\foreignlanguage{#1}{Vas##1{}}}%
+  \def\btxmonmarshort##1{\protect\foreignlanguage{#1}{Kov##1{}}}%
+  \def\btxmonaprshort##1{\protect\foreignlanguage{#1}{Bal##1{}}}%
+  \def\btxmonmayshort##1{\protect\foreignlanguage{#1}{Geg##1{}}}%
+  \def\btxmonjunshort##1{\protect\foreignlanguage{#1}{Bir##1{}}}%
+  \def\btxmonjulshort##1{\protect\foreignlanguage{#1}{Lie##1{}}}%
+  \def\btxmonaugshort##1{\protect\foreignlanguage{#1}{Rgp##1{}}}%
+  \def\btxmonsepshort##1{\protect\foreignlanguage{#1}{Rgs##1{}}}%
+  \def\btxmonoctshort##1{\protect\foreignlanguage{#1}{Spl##1{}}}%
+  \def\btxmonnovshort##1{\protect\foreignlanguage{#1}{Lap##1{}}}%
+  \def\btxmondecshort##1{\protect\foreignlanguage{#1}{Grd##1{}}}%
+  \def\Btxinlong##1{\protect\foreignlanguage{#1}{Iš}}%
+  \def\Btxinshort##1{\protect\foreignlanguage{#1}{Iš}}%
+  \def\Btxeditorshort##1{\protect\foreignlanguage{#1}{Red.##1{}}}%
+  \def\Btxeditorlong##1{\protect\foreignlanguage{#1}{Redaktorius}}%
+  \def\Btxeditorsshort##1{\protect\foreignlanguage{#1}{Red.##1{}}}%
+  \def\Btxeditorslong##1{\protect\foreignlanguage{#1}{Redaktoriai}}%
+  \def\Btxvolumeshort##1{\protect\foreignlanguage{#1}{Tomas}}%
+  \def\Btxvolumelong##1{\protect\foreignlanguage{#1}{Tomas}}%
+  \def\Btxnumbershort##1{\protect\foreignlanguage{#1}{Nr.##1{}}}%
+  \def\Btxnumberlong##1{\protect\foreignlanguage{#1}{Numeris}}%
+  \def\Btxeditionshort##1{\protect\foreignlanguage{#1}{Leidimas}}%
+  \def\Btxeditionlong##1{\protect\foreignlanguage{#1}{Leidimas}}%
+  \def\Btxchaptershort##1{\protect\foreignlanguage{#1}{Sk.##1{}}}%
+  \def\Btxchapterlong##1{\protect\foreignlanguage{#1}{Skyrius}}%
+  \def\Btxpageshort##1{\protect\foreignlanguage{#1}{Psl.##1{}}}%
+  \def\Btxpagelong##1{\protect\foreignlanguage{#1}{Puslapis}}%
+  \def\Btxpagesshort##1{\protect\foreignlanguage{#1}{Psl.##1{}}}%
+  \def\Btxpageslong##1{\protect\foreignlanguage{#1}{Puslapiai}}%
+  \def\Btxtechrepshort##1{\protect\foreignlanguage{#1}{Techn.\ atask.##1{}}}%
+  \def\Btxtechreplong##1{\protect\foreignlanguage{#1}{Techninė ataskaita}}%
+  \def\btxurldatecomment##1{\protect\foreignlanguage{#1}{, aplankyta: ##1}}%
+  \def\btxfnamespaceshort{\,}%
+  \def\btxfnamespacelong{ }%
+  \def\btxnumeralshort##1{\btxnumeraldot{#1}{##1}}%
+  \def\btxnumerallong##1{\btxnumeraldot{#1}{##1}}%
+  \def\btxprintmonthyearnum##1##2{##1/##2}%
+  \def\btxkeywordlanguage##1{{\protect\selectlanguage{#1}##1}}%
+  \ifbbbblanguagenames
+    \def\btxlanguagenameamerican{\protect\foreignlanguage{#1}{anglų}}%
+    \def\btxlanguagenameaustrian{\protect\foreignlanguage{#1}{vokiečių}}%
+    \def\btxlanguagenamebrazil{\protect\foreignlanguage{#1}{portugalų}}%
+    \def\btxlanguagenamebrazilian{\protect\foreignlanguage{#1}{portugalų}}%
+    \def\btxlanguagenamebritish{\protect\foreignlanguage{#1}{anglų}}%
+    \def\btxlanguagenamebulgarian{\protect\foreignlanguage{#1}{bulgarų}}%
+    \def\btxlanguagenamecanadian{\protect\foreignlanguage{#1}{anglų}}%
+    \def\btxlanguagenamecanadien{\protect\foreignlanguage{#1}{prancūzų}}%
+    \def\btxlanguagenamecatalan{\protect\foreignlanguage{#1}{katalonų}}%
+    \def\btxlanguagenamecroatian{\protect\foreignlanguage{#1}{kroatų}}%
+    \def\btxlanguagenameczech{\protect\foreignlanguage{#1}{čekų}}%
+    \def\btxlanguagenamedanish{\protect\foreignlanguage{#1}{danų}}%
+    \def\btxlanguagenamedutch{\protect\foreignlanguage{#1}{olandų}}%
+    \def\btxlanguagenameenglish{\protect\foreignlanguage{#1}{anglų}}%
+    \def\btxlanguagenameesperanto{\protect\foreignlanguage{#1}{esperanto}}%
+    \def\btxlanguagenamefinnish{\protect\foreignlanguage{#1}{suomių}}%
+    \def\btxlanguagenamefrancais{\protect\foreignlanguage{#1}{prancūzų}}%
+    \def\btxlanguagenamefrench{\protect\foreignlanguage{#1}{prancūzų}}%
+    \def\btxlanguagenamefrenchb{\protect\foreignlanguage{#1}{prancūzų}}%
+    \def\btxlanguagenamegerman{\protect\foreignlanguage{#1}{vokiečių}}%
+    \def\btxlanguagenamegermanb{\protect\foreignlanguage{#1}{vokiečių}}%
+    \def\btxlanguagenamegreek{\protect\foreignlanguage{#1}{graikų}}%
+    \def\btxlanguagenamehebrew{\protect\foreignlanguage{#1}{hebrajų}}%
+    \def\btxlanguagenamehungarian{\protect\foreignlanguage{#1}{vengrų}}%
+    \def\btxlanguagenameicelandic{\protect\foreignlanguage{#1}{islandų}}%
+    \def\btxlanguagenameirish{\protect\foreignlanguage{#1}{airių}}%
+    \def\btxlanguagenameitalian{\protect\foreignlanguage{#1}{italų}}%
+    \def\btxlanguagenamelatin{\protect\foreignlanguage{#1}{lotynų}}%
+    \def\btxlanguagenamelithuanian{\protect\foreignlanguage{#1}{lietuvių}}%
+    \def\btxlanguagenamenaustrian{\protect\foreignlanguage{#1}{austrų}}%
+    \def\btxlanguagenamengerman{\protect\foreignlanguage{#1}{vokiečių}}%
+    \def\btxlanguagenamenorsk{\protect\foreignlanguage{#1}{norvegų}}%
+    \def\btxlanguagenamenynorsk{\protect\foreignlanguage{#1}{norvegų}}%
+    \def\btxlanguagenamepolish{\protect\foreignlanguage{#1}{lenkų}}%
+    \def\btxlanguagenameportuges{\protect\foreignlanguage{#1}{portugalų}}%
+    \def\btxlanguagenameportuguese{\protect\foreignlanguage{#1}{portugalų}}%
+    \def\btxlanguagenamerussian{\protect\foreignlanguage{#1}{rusų}}%
+    \def\btxlanguagenamescottish{\protect\foreignlanguage{#1}{škotų}}%
+    \def\btxlanguagenameserbian{\protect\foreignlanguage{#1}{serbų}}%
+    \def\btxlanguagenamespanish{\protect\foreignlanguage{#1}{ispanų}}%
+    \def\btxlanguagenameswedish{\protect\foreignlanguage{#1}{švedų}}%
+    \def\btxlanguagenameturkish{\protect\foreignlanguage{#1}{turkų}}%
+    \def\btxlanguagenameUKenglish{\protect\foreignlanguage{#1}{anglų}}%
+    \def\btxlanguagenameUSenglish{\protect\foreignlanguage{#1}{anglų}}%
+  \fi
+}
+\AtBeginDocument{%
+  \ifbbbbfixlanguage
+  \else
+    \bbbbaddto{lithuanian}{bibslithuanian}
+  \fi
+  \bbbbaddto{lithuanian}{btxifchangecaseoff}
+}
+
+\endinput
+%%
+%% End of file `lithuanian.bdf'.

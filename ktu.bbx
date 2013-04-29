@@ -631,6 +631,11 @@
   \newunit\newblock
   \printfield{howpublished}%
   \newunit\newblock
+  \iffieldundef{series}
+    {}
+    {\newunit
+     \printfield{series}}%
+  \newunit\newblock
   \printfield{note}%
   \newunit\newblock
   \usebibmacro{location+date}%

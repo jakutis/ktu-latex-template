@@ -234,6 +234,8 @@
 \renewcommand{\cftafterloftitleskip}{\baselineskip}
 \renewcommand{\cftbeforelottitleskip}{-\baselineskip}
 \renewcommand{\cftafterlottitleskip}{\baselineskip}
+\DeclareFieldFormat[unpublished]{title}{#1}
+\DeclareFieldFormat[unpublished]{citetitle}{#1}
 \newcommand{\myinit}{
 \pagestyle{ktudarbas}
 \tocloftpagestyle{ktudarbas}

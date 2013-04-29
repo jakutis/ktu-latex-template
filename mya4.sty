@@ -109,6 +109,10 @@
   \mysubsection{#1}\label{file:#1}
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#3}{#2}
 }
+\newcommand{\mysrcrh}[4]{
+  #4{#1}\label{file:#1}
+  \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#3}{#2}
+}
 \newcommand{\mytexfigurec}[2]{
   \begin{figure}[H]
     \begin{center}

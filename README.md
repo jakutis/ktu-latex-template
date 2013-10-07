@@ -9,4 +9,3 @@ Just run:
 ## Dependencies
 
     * TeX Live
-    * TODO

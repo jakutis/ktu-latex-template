@@ -32,39 +32,20 @@
 \newbibmacro*{finentry}{\finentry}
 
 \DeclareBibliographyDriver{article}{%
-  \usebibmacro{bibindex}%
-  \usebibmacro{begentry}%
-  \usebibmacro{author/translator+others}%
-  \setunit{\labelnamepunct}\newblock
-  \usebibmacro{title}%
-  \newunit
-  \printlist{language}%
-  \newunit\newblock
-  \usebibmacro{byauthor}%
-  \newunit\newblock
-  \usebibmacro{bytranslator+others}%
-  \newunit\newblock
-  \printfield{version}%
-  \newunit\newblock
-  \usebibmacro{in:}%
-  \usebibmacro{journal+issuetitle}%
-  \newunit
-  \usebibmacro{byeditor+others}%
-  \newunit
-  \usebibmacro{note+pages}%
-  \newunit\newblock
-  \iftoggle{bbx:isbn}
-    {\printfield{issn}}
-    {}%
-  \newunit\newblock
-  \usebibmacro{doi+eprint+url}%
-  \newunit\newblock
-  \usebibmacro{addendum+pubstate}%
-  \setunit{\bibpagerefpunct}\newblock
-  \usebibmacro{pageref}%
-  \newunit\newblock
-  \usebibmacro{related}%
-  \usebibmacro{finentry}}
+  \usebibmacro{author}%
+  \printfield[default]{title}%
+  \printtext{ / }%
+  \printfield[journaltitle]{journaltitle}%
+  \printtext{, t. }%
+  \printfield[default]{volume}%
+  \printtext{, }%
+  \printfield[default]{year}%
+  \printtext{, }%
+  \printfield[default]{number}%
+  \printtext{, p. }%
+  \printfield[default]{pages}%
+  \printtext{.}%
+}
 
 \DeclareBibliographyDriver{book}{%
   \usebibmacro{bibindex}%

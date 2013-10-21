@@ -29,7 +29,7 @@
 \usepackage{csquotes}
 \usepackage[lithuanian]{babel}
 \selectlanguage{lithuanian}
-\usepackage[labelnumber=true,natbib=true,bibstyle=ktu,firstinits=true,citestyle=ktu,language=lithuanian,dashed=false]{biblatex}
+\usepackage[babel=other,spacecolon=false,bibencoding=UTF8,sortlocale=lt_LT,backend=biber,sorting=none,labelnumber=true,natbib=true,bibstyle=iso-numeric,firstinits=true,citestyle=iso-authoryear,language=lithuanian]{biblatex}
 \bibliography{references}
 \usemintedstyle{bw}
 \renewcommand{\normalfont}{\sloppy\linespread{1.5}\fontsize{12pt}{12pt}\selectfont}
@@ -303,6 +303,7 @@
 \clearpage\listoftables
 }
 \newcommand{\myliterature}{
+\renewcommand\mkbibnamelast[1]{\MakeUppercase{##1}}
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{Literatūra}

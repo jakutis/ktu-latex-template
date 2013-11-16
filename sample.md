@@ -16,7 +16,7 @@ A _paragraph_ here. A code chunk below (remember the three backticks):
 
 It is easy.
 
-```{r}
+```{r dev='pdf'}
 plot(1:10)
 hist(rnorm(1000))
 ```

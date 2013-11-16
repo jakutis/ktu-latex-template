@@ -2,7 +2,7 @@ MARKDOWN_TO_LATEX := md-sample.tex
 
 all: paper.pdf
 
-pdf: references.bib *.tex mya4.sty mya5.sty
+pdf: references.bib *.tex
 	xelatex -shell-escape paper.tex
 
 md-%.tex: %.md
@@ -10,7 +10,7 @@ md-%.tex: %.md
 	cat latexktu-temp.md | kramdown --output=latex > $@
 	rm latexktu-temp.md
 
-paper.pdf: references.bib paper.tex sas.tex $(MARKDOWN_TO_LATEX) mya4.sty mya5.sty
+paper.pdf: references.bib paper.tex sas.tex $(MARKDOWN_TO_LATEX)
 	xelatex -shell-escape paper
 	biber paper
 	sage paper.sagetex.sage

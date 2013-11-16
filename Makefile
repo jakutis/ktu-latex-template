@@ -31,4 +31,4 @@ clean:
 
 .PHONY:
 init:
-	./init
+	./initialize

@@ -40,4 +40,4 @@ then
     touch references.bib
 fi
 
-rm README.md init
+rm README.md initialize

@@ -1,21 +1,16 @@
-OBJECTS_MD := md-sample.tex
-OBJECTS_R := r-md-rtest.tex
+MARKDOWN_TO_LATEX := md-sample.tex
 
 all: paper.pdf
 
-pdf: references.bib *.tex mya4.sty
+pdf: references.bib *.tex mya4.sty mya5.sty
 	xelatex -shell-escape paper.tex
 
 md-%.tex: %.md
-	cat $< | kramdown --output=latex > $@
+	echo 'library(knitr);knit("$<", output="latexktu-temp.md")' | R --no-save --quiet
+	cat latexktu-temp.md | kramdown --output=latex > $@
+	rm latexktu-temp.md
 
-md-%.Rnw: %.md
-	cat $< | kramdown --output=latex > $@
-
-r-md-%.tex: md-%.Rnw
-	echo 'library(knitr);knit("$<", output="$@")' | R --no-save --quiet
-
-paper.pdf: references.bib paper.tex sas.tex $(OBJECTS_MD) $(OBJECTS_R) mya4.sty
+paper.pdf: references.bib paper.tex sas.tex $(MARKDOWN_TO_LATEX) mya4.sty mya5.sty
 	xelatex -shell-escape paper
 	biber paper
 	sage paper.sagetex.sage
@@ -27,7 +22,7 @@ references.bib: references
 
 .PHONY:
 clean:
-	rm -rf paper.pdf paper.run.xml paper.bcf paper.aux paper.log paper.toc paper.bbl paper.blg paper.lot paper.lof paper.out paper.pyg references.bib texput.log paper.sagetex.py paper.sagetex.sage paper.sagetex.scmd paper.sagetex.sout sage-plots-for-paper.tex md-*.tex r-md-*.tex
+	rm -rf paper.pdf paper.run.xml paper.bcf paper.aux paper.log paper.toc paper.bbl paper.blg paper.lot paper.lof paper.out paper.pyg references.bib texput.log paper.sagetex.py paper.sagetex.sage paper.sagetex.scmd paper.sagetex.sout sage-plots-for-paper.tex $(MARKDOWN_TO_LATEX)
 
 .PHONY:
 init:

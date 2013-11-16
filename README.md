@@ -19,6 +19,8 @@ This is a latex project template with these features:
 ## Installation (Linux)
 
 0. Copy all files to a new directory: execute terminal commands `cd <path_to_LATEXKTU>;mkdir ~/new_project;cp * ~/new_project`.
-0. Initialize: execute terminal commands `cd ~/new_project;make init`.
+0. Initialize: execute terminal commands `cd ~/new_project;make init`, it will ask you:
+   * type of compiled pdf - currently A4, A5 and presentation
+   * relative or absolute path to directory with BibTeX files (.bib filename extension) - this path written to `refdir` file
 0. Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable - it contains a list of `md-<name>.tex` files that will be created from your own `<name>.md` files.
 0. Open `paper.tex` in your text editor and review it, especially the `\input{md-sample}` line (remember the `MARKDOWN_TO_LATEX` variable in the previous step).

@@ -7,7 +7,7 @@ pdf: references.bib *.tex
 
 md-%.tex: %.md
 	echo 'library(knitr);knit("$<", output="latexktu-temp.md")' | R --no-save --quiet
-	cat latexktu-temp.md | kramdown --output=latex > $@
+	cat latexktu-temp.md | sed -s 's/```/~~~ /' | kramdown --output=latex > $@
 	rm latexktu-temp.md
 
 paper.pdf: references.bib paper.tex sas.tex $(MARKDOWN_TO_LATEX)

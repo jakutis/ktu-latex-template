@@ -30,7 +30,7 @@ fi
 
 while ! [ -d "$REFDIR" ]
 do
-    REFDIR=$(dialog --inputbox "Enter path to existing directory with .bib files" 100 100 3>&1 1>&2 2>&3)
+    REFDIR=$(dialog --inputbox "Enter path to existing directory with BibTeX (.bib) files" 100 100 3>&1 1>&2 2>&3)
 done
 
 echo "$REFDIR" > ./refdir

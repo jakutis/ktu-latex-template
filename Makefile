@@ -31,6 +31,4 @@ clean:
 
 .PHONY:
 init:
-	bash -c 'if [ -e "paper.tex" ]; then exit 1; fi;A=$$(dialog --radiolist "Choose the type" 100 100 50 a4 A4 a4 a5 A5 a5 presentation Presentation presentation 3>&1 1>&2 2>&3);mv "paper-$$A.tex" "paper.tex";rm paper-*;if ! [ "$$A" = "presentation" ]; then rm ktu_back_bright.png ktu_back_dark.png ktu_front.png; fi;if ! [ "$$A" = "a4" ]; then rm mya4.sty; fi;if ! [ "$$A" = "a5" ]; then rm mya5.sty; fi'
-	bash -c 'REFDIR=$$(dialog --inputbox "Enter directory with references" 100 100 3>&1 1>&2 2>&3);echo "$$REFDIR" > ./refdir;if ! [ "$$REFDIR" = "." ];then mv *.bib references.bib; touch references.bib;fi;'
-	rm README.md
+	./init

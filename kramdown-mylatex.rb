@@ -66,7 +66,7 @@ module Kramdown
       end
 
       def convert_img(el, indent)
-        "\\myfigure{#{el.attr['src']}}{#{el.attr['alt']}}"
+        "\\myfigurewidest{#{el.attr['src']}}{#{el.attr['alt']}}"
       end
 
       def convert_text(el, opts)
@@ -86,7 +86,7 @@ module Kramdown
       def convert_standalone_image(el, opts)
         src = el.children.first.attr['src']
         width = el.attr.has_key?('latexwidth') ? el.attr['latexwidth'] : '\\textwidth'
-        "\\myfigure{#{src}}{#{width}}{#{escape(el.children.first.attr['alt'])}}\n"
+        "\\myfigurewidest{#{src}}{#{width}}{#{escape(el.children.first.attr['alt'])}}\n"
       end
 
       def convert_codeblock(el, opts)

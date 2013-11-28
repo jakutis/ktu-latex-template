@@ -1,24 +1,20 @@
 MARKDOWN_TO_LATEX := md-sample.tex
 
+.PHONY:
 all: paper.pdf
 
-pdf: references.bib *.tex
-	xelatex -shell-escape paper.tex
-
-md-%.tex: %.md
-	echo 'library(knitr);knit("$<", output="latexktu-temp.md")' | R --no-save --quiet
-	cat latexktu-temp.md | sed -s 's/```/~~~ /' | kramdown --output=latex > $@
-	rm latexktu-temp.md
-
-paper.pdf: references.bib paper.tex sas.tex $(MARKDOWN_TO_LATEX)
+.PHONY:
+force:
+	./refs-bib references $(shell cat refdir) > references.bib
 	xelatex -shell-escape paper
 	biber paper
 	sage paper.sagetex.sage
 	xelatex -shell-escape paper
 	xelatex -shell-escape paper
 
-references.bib: references
-	./refs-bib references $(shell cat refdir) > references.bib
+.PHONY:
+pdf:
+	xelatex -shell-escape paper.tex
 
 .PHONY:
 clean:
@@ -27,3 +23,11 @@ clean:
 .PHONY:
 init:
 	./initialize
+
+md-%.tex: %.md
+	echo 'library(knitr);knit("$<", output="latexktu-temp.md")' | R --no-save --quiet
+	cat latexktu-temp.md | sed -s 's/```/~~~ /' | kramdown --output=latex > $@
+	rm latexktu-temp.md
+
+paper.pdf: paper.tex sas.tex $(MARKDOWN_TO_LATEX)
+	make force

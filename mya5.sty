@@ -1,3 +1,4 @@
+\usepackage{xparse}
 \usepackage{amssymb}
 \usepackage{yhmath}
 \usepackage{mathspec}
@@ -23,7 +24,8 @@
 \usepackage{enumerate}
 \usepackage{longtable}
 \usepackage{pst-plot}
-\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage{minted}
 \usepackage[final]{pdfpages}
 \usepackage{csquotes}
@@ -51,6 +53,8 @@
 \DeclareCaptionStyle{ktulentele}[]{justification=raggedleft,format=ktulentele,listformat=simple,labelseparator=period,labelformat=ktu,labelfont={ktu},textfont={ktu},singlelinecheck=false}
 \DeclareCaptionFormat{ktupav}{\bfseries #1 pav. #3\par}
 \DeclareCaptionStyle{ktupav}[]{justification=centering,format=ktupav,listformat=simple,labelseparator=period,labelformat=ktu,labelfont={ktu},textfont={ktu},singlelinecheck=false}
+\DeclareCaptionFormat{ktualg}{\bfseries #1 algoritmas. #3\par}
+\DeclareCaptionStyle{ktualg}[]{justification=centering,format=ktualg,listformat=simple,labelseparator=period,labelformat=ktu,labelfont={ktu},textfont={ktu},singlelinecheck=false}
 \makeatletter
 \def\tagform@#1{\maketag@@@{\bfseries(\ignorespaces#1\unskip\@@italiccorr)}}
 \makeatother
@@ -188,6 +192,32 @@
 \newcommand{\mysubsubsection}[1]{\subsubsection[#1]{#1}\label{sec:#1}}
 \newcommand{\mycomment}[1]{}
 \newcommand{\mq}[1]{,,#1\textquotedblleft}
+\algrenewcommand\algorithmicwhile{\textbf{kol}}
+\algrenewcommand\algorithmicdo{\textbf{kartoti}}
+\algrenewcommand\algorithmicfor{\textbf{visiems}}
+\algrenewcommand\algorithmicrepeat{\textbf{kartoti}}
+\algrenewcommand\algorithmicif{\textbf{jei}}
+\algrenewcommand\algorithmicprocedure{\textbf{procedūra}}
+\algrenewcommand\algorithmicfunction{\textbf{funkcija}}
+\algrenewcommand\algorithmicloop{\textbf{ciklas}}
+\algrenewcommand\algorithmicend{\textbf{baigti}}
+\algrenewcommand\algorithmicreturn{\textbf{grąžinti}}
+\algrenewcommand\algorithmicthen{\textbf{tada}}
+\algrenewcommand\algorithmicelse{\textbf{kitu atveju}}
+\floatstyle{plaintop}
+\restylefloat{algorithm}
+\floatname{algorithm}{Algoritmas}
+\renewcommand{\listalgorithmname}{Algoritmų sąrašas}
+\NewDocumentEnvironment{myalgo}{m m}{
+        \begin{algorithm}
+            \captionsetup{style=ktualg}
+            \caption{#2}\label{algorithm:#1}
+            \begin{algorithmic}[1]
+    }
+    {
+            \end{algorithmic}
+        \end{algorithm}
+    }
 \newenvironment{myappendices}
   {
     \mynchapter{Priedai}
@@ -305,6 +335,7 @@
 \clearpage\tableofcontents
 \clearpage\listoffigures
 \clearpage\listoftables
+\clearpage\listofalgorithms
 }
 \newcommand{\myliterature}{
 \renewcommand\mkbibnamelast[1]{\MakeUppercase{##1}}

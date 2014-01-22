@@ -12,7 +12,7 @@ This is a latex project template with these features:
 * [TeX Live](http://www.tug.org/texlive/)
 * [kramdown](http://kramdown.gettalong.org/) installation with the `kramdown-mylatex.rb` file copied to `<kramdown_directory>/converter/latex.rb`
   * if kramdown is installed with `gem install kramdown`, then `<kramdown_directory>` is something like `/home/username/.rvm/gems/ruby-2.0.0-p195/gems/kramdown-1.0.2/lib/kramdown`
-  * if kramdown is installed with on Ubuntu with `apt-get install ruby-kramdown`, then `<kramdown_directory>` is something like `/usr/lib/ruby/vendor_ruby/kramdown`
+  * if kramdown is installed on Ubuntu with `apt-get install ruby-kramdown`, then `<kramdown_directory>` is something like `/usr/lib/ruby/vendor_ruby/kramdown`
 * [Sage](http://www.sagemath.org/) with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) installed and working
 * [R](http://www.r-project.org/) with [knitr](http://yihui.name/knitr/) package installed and working
 

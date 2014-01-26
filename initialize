@@ -5,9 +5,17 @@ then
     exit 1
 fi
 
+DIALOG="$(which dialog)"
+
+if [ -z "$DIALOG" ]
+then
+    echo "Error: command 'dialog' not found, please install http://invisible-island.net/dialog/dialog.html. Maybe via 'apt-get install dialog'"
+    exit 1
+fi
+
 while [ "$TYPE" != "a4" -a "$TYPE" != "a5" -a "$TYPE" != "presentation" ]
 do
-    TYPE=$(dialog --radiolist "Choose the type (mark selection with spacebar)" 100 100 50 a4 A4 a4 a5 A5 a5 presentation Presentation presentation 3>&1 1>&2 2>&3);
+    TYPE=$("$DIALOG" --radiolist "Choose the type (mark selection with spacebar)" 100 100 50 a4 A4 a4 a5 A5 a5 presentation Presentation presentation 3>&1 1>&2 2>&3)
 done
 
 mv "paper-$TYPE.tex" "paper.tex"

@@ -333,10 +333,21 @@
 \end{titlepage}
 
 \clearpage\tableofcontents
-\clearpage\listoffigures
-\clearpage\listoftables
-\clearpage\listofalgorithms
+\clearpage\conditionalLoF
+\clearpage\conditionalLoT
+\clearpage\conditionalLoA
 }
+\makeatletter
+\AtEndEnvironment{figure}{\gdef\there@is@a@figure{}}
+\AtEndDocument{\ifdefined\there@is@a@figure\label{fig:was:used:in:doc}\fi}
+\newcommand{\conditionalLoF}{\@ifundefined{r@fig:was:used:in:doc}{}{\listoffigures}}%
+\AtEndEnvironment{table}{\gdef\there@is@a@table{}}
+\AtEndDocument{\ifdefined\there@is@a@table\label{table:was:used:in:doc}\fi}
+\newcommand{\conditionalLoT}{\@ifundefined{r@table:was:used:in:doc}{}{\listoftables}}%
+\AtEndEnvironment{algorithm}{\gdef\there@is@an@algorithm{}}
+\AtEndDocument{\ifdefined\there@is@an@algorithm\label{algorithm:was:used:in:doc}\fi}
+\newcommand{\conditionalLoA}{\@ifundefined{r@algorithm:was:used:in:doc}{}{\listofalgorithms}}%
+\makeatother
 \newcommand{\myliterature}{
 \renewcommand\mkbibnamelast[1]{\MakeUppercase{##1}}
 \clearpage

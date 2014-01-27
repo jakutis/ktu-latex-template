@@ -1,6 +1,6 @@
 # LatexKTU - latex template for Kaunas University of Technology
 
-Homepage is at https://jakut.is/git/LATEXKTU/.
+This text is also available on the [LatexKTU homepage](https://jakut.is/git/LATEXKTU/about/).
 This is a latex project template with these features:
 
 * A4, A5 and presentation formats

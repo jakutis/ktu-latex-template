@@ -48,4 +48,4 @@ then
     touch references.bib
 fi
 
-rm README.md initialize
+rm README.md initialize kramdown-mylatex.rb

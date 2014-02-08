@@ -107,7 +107,8 @@
 \newminted{text}{linenos=false,baselinestretch=1,samepage=false}
 \renewcommand\theFancyVerbLine{\lstfont\arabic{FancyVerbLine}}
 \renewcommand\FancyVerbFormatLine{\lstfont}
-\newcommand{\mysrcref}[1]{\vref{file:#1}, #1)}
+\newcommand{\myalgoref}[1]{#1 nr.~\vref{algorithm:#1})}
+\newcommand{\mysrcref}[1]{#1~\vref{file:#1})}
 \newcommand{\mysrc}[2]{
   \mysubsection{#1}\label{file:#1}
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#2}{#1}
@@ -151,9 +152,12 @@
     \end{table}
   }
 \newcommand{\mytextc}[2]{
+  \mytextcl{#1}{#2}{true}
+}
+\newcommand{\mytextcl}[3]{
   \begin{figure}[H]
     \begin{center}
-      \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{text}{#1}\label{file:#1}
+      \inputminted[linenos=#3,baselinestretch=1,samepage=false,frame=leftline]{text}{#1}\label{file:#1}
       \captionsetup{style=ktupav}
       \caption{#2}
     \end{center}

@@ -1,0 +1,43 @@
+\newcommand{\ktusubject}{TODO subject}
+\newcommand{\ktutitle}{TODO title}
+\newcommand{\ktuyear}{TODO year}
+\newcommand{\ktudate}{\ktuyear-TODO month-day}
+\newcommand{\ktucity}{TODO city}
+\newcommand{\ktuinstitution}{TODO institution}
+\newcommand{\ktufaculty}{TODO subinstitution}
+\newcommand{\ktucathedral}{TODO subsubinstitution}
+\newcommand{\ktuauthor}{TODO author}
+\newcommand{\ktumaster}{TODO receiver}
+
+\documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits, fleqn]{report}
+\usepackage{ktua4}
+\begin{document} 
+\ktuinit{}    
+  
+\ktuchapter{Testing SageTeX}
+
+Here's some Sage code:
+
+\begin{sageblock}
+    f(x) = exp(x) * sin(2*x)
+\end{sageblock}
+
+Here's a plot of $f$ from $-1$ to $1$:
+
+\sageplot[width=15cm]{plot(f, -1, 1)}
+
+\ktuchapter{Testing Markdown and R}
+
+\input{md-sample}
+
+\ktuliterature{}
+
+\clearpage
+\begin{ktuappendices}
+
+\ktusubsection{Example material}
+A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, R, S, T, U, V, Z.
+
+\end{ktuappendices}
+
+\end{document}

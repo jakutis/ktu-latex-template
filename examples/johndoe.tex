@@ -1,41 +1,85 @@
-\newcommand{\ktusubject}{TODO subject}
-\newcommand{\ktutitle}{TODO title}
-\newcommand{\ktuyear}{TODO year}
-\newcommand{\ktudate}{\ktuyear-TODO month-day}
-\newcommand{\ktucity}{TODO city}
-\newcommand{\ktuinstitution}{TODO institution}
-\newcommand{\ktufaculty}{TODO subinstitution}
-\newcommand{\ktucathedral}{TODO subsubinstitution}
-\newcommand{\ktuauthor}{TODO author}
-\newcommand{\ktumaster}{TODO receiver}
+\newcommand{\ktusubject}{Report nr.1}   
+\newcommand{\ktutitle}{Example title}
+\newcommand{\ktuyear}{2014}
+\newcommand{\ktudate}{\ktuyear-04-24}
+\newcommand{\ktucity}{Kaunas}
+\newcommand{\ktuinstitution}{Kaunas University of Technology}
+\newcommand{\ktufaculty}{Faculty of Mathematics and Fundamental Sciences}
+\newcommand{\ktucathedral}{Department of Applied Mathematics}
+\newcommand{\ktuauthor}{John Doe}
+\newcommand{\ktumaster}{Jane Roe}
 
-\documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits, fleqn]{report}
+
+\documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits]{report}
+
+
+
 \usepackage{ktua4}
+
 \begin{document} 
+
+
+
+
+
+% 
 \ktuinit{}    
-  
-\ktuchapter{Testing SageTeX}
 
-Here's some Sage code:
+\ktuchapter{First Chapter}
+\begin{equation}\label{eq:pirma}
+x^2=3
+\end{equation} 
 
-\begin{sageblock}
-    f(x) = exp(x) * sin(2*x)
-\end{sageblock}
+This is first equation \ref{eq:pirma}.
 
-Here's a plot of $f$ from $-1$ to $1$:
 
-\sageplot[width=15cm]{plot(f, -1, 1)}
+\begin{ktutable}{caption}{Atsitiktinai suvesti duomenys}
+    \begin{tabular}{lcl}
+      Vardas & Metai & Formulę \\
+      Niutonas   & 1687 & $F = m a$ \\
+      Einšteinas & 1905 & $E = m c^2$ \\
+    \end{tabular}
+\end{ktutable}
 
-\ktuchapter{Testing Markdown and R}
+\begin{ktutable}{caption1}{Atsitiktinai suvesti duomenys}
+    \begin{tabular}{lcl}
+      Vardas & Metai & Formulę \\
+      Niutonas   & 1687 & $F = m a$ \\
+      Einšteinas & 1905 & $E = m c^2$ \\
+    \end{tabular}
+\end{ktutable}
 
-\input{md-sample}
+\begin{ktutable}{caption2}{Atsitiktinai suvesti duomenys}
+    \begin{tabular}{lcl}
+      Vardas & Metai & Formulę \\
+      Niutonas   & 1687 & $F = m a$ \\
+      Einšteinas & 1905 & $E = m c^2$ \\
+    \end{tabular}
+\end{ktutable}
+\newpage
+
+\ktusection{First section}
+
+\ktufigure{johndoe.pdf}{0.5\textwidth}{this is it}
+
+\newpage
+
+\ktusection{Second section}
+\begin{equation}
+\sin(x)=1 
+\end{equation}
+\ktusubsection{First subsection}
+%I want to cite something here. I will cite \cite{lear} book.
+\ktusubsection{Second subsection}
+
+%\input{md-sample} 
 
 \ktuliterature{}
 
 \clearpage
 \begin{ktuappendices}
 
-\ktusubsection{Example material}
+\ktusection{Example material}
 A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, R, S, T, U, V, Z.
 
 \end{ktuappendices}

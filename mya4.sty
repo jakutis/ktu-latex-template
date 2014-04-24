@@ -39,9 +39,9 @@
 \newcommand{\lstfont}{\sloppy\linespread{1.5}\fontsize{\lstsize}{\lstsize}\selectfont\ttfamily}
 \newcommand{\cmd}[1]{\sloppy\linespread{1.5}\fontsize{\lstsize}{\lstsize}\selectfont\framebox{\texttt{#1}}\normalfont}
 \renewcommand{\bibname}{}
-\newcommand{\mytocdots}{1.5mm}
-\newcommand{\myheading}{\bfseries\fontsize{14pt}{14pt}\selectfont}
-\usepackage[pdftitle={\mytitle},pdfsubject={\mysubject},pdfauthor={\myauthor},unicode=true,colorlinks=false,xetex,bookmarks=true,pdfborder=0,hyperindex=true]{hyperref}
+\newcommand{\ktutocdots}{1.5mm}
+\newcommand{\ktuheading}{\bfseries\fontsize{14pt}{14pt}\selectfont}
+\usepackage[pdftitle={\ktutitle},pdfsubject={\ktusubject},pdfauthor={\ktuauthor},unicode=true,colorlinks=false,xetex,bookmarks=true,pdfborder=0,hyperindex=true]{hyperref}
 \usepackage{sagetex}
 \raggedbottom
 \captionsetup[figure]{name=}
@@ -78,10 +78,10 @@
 }
 \makeatletter
 \renewcommand{\@pnumwidth}{3em} \renewcommand{\@tocrmarg}{4em}
-  \renewcommand{\chapter}{\@startsection{chapter}{1}{0mm}{\baselineskip}{\baselineskip}{\myheading\setcounter{figure}{0}\setcounter{table}{0}\raggedright}}
-  \renewcommand{\section}{\@startsection{section}{2}{0mm}{\baselineskip}{\baselineskip}{\myheading\raggedright\raggedright}}
-  \renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}{\baselineskip}{\baselineskip}{\myheading\raggedright}}
-  \renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}{\baselineskip}{\baselineskip}{\myheading\raggedright}}
+  \renewcommand{\chapter}{\@startsection{chapter}{1}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\setcounter{figure}{0}\setcounter{table}{0}\raggedright}}
+  \renewcommand{\section}{\@startsection{section}{2}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright\raggedright}}
+  \renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright}}
+  \renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright}}
 \makeatother
 \DeclareMathOperator*{\cov}{cov}
 \renewcommand{\theenumi}{\alph{enumi})}
@@ -107,21 +107,21 @@
 \newminted{text}{linenos=false,baselinestretch=1,samepage=false}
 \renewcommand\theFancyVerbLine{\lstfont\arabic{FancyVerbLine}}
 \renewcommand\FancyVerbFormatLine{\lstfont}
-\newcommand{\myalgoref}[1]{#1 nr.~\vref{algorithm:#1})}
-\newcommand{\mysrcref}[1]{#1~\vref{file:#1})}
-\newcommand{\mysrc}[2]{
-  \mysubsection{#1}\label{file:#1}
+\newcommand{\ktualgoref}[1]{#1 nr.~\vref{algorithm:#1})}
+\newcommand{\ktusrcref}[1]{#1~\vref{file:#1})}
+\newcommand{\ktusrc}[2]{
+  \ktusubsection{#1}\label{file:#1}
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#2}{#1}
 }
-\newcommand{\mysrcr}[3]{
-  \mysubsection{#1}\label{file:#1}
+\newcommand{\ktusrcr}[3]{
+  \ktusubsection{#1}\label{file:#1}
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#3}{#2}
 }
-\newcommand{\mysrcrh}[4]{
+\newcommand{\ktusrcrh}[4]{
   #4{#1}\label{file:#1}
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#3}{#2}
 }
-\newcommand{\mytexfigurec}[2]{
+\newcommand{\ktutexfigurec}[2]{
   \begin{figure}[H]
     \begin{center}
       \input{#1}
@@ -130,7 +130,7 @@
     \end{center}
   \end{figure}
 }
-\newcommand{\mytextablec}[2]{
+\newcommand{\ktutextablec}[2]{
   \begin{table}[H]
     \captionsetup{style=ktulentele}
     \caption{#2}
@@ -140,7 +140,7 @@
   \end{table}
   \addtocounter{table}{-1}
 }
-\newenvironment{mytable}[2]
+\newenvironment{ktutable}[2]
   {
     \begin{table}[H]
       \captionsetup{style=ktulentele}
@@ -151,10 +151,10 @@
   {
     \end{table}
   }
-\newcommand{\mytextc}[2]{
-  \mytextcl{#1}{#2}{true}
+\newcommand{\ktutextc}[2]{
+  \ktutextcl{#1}{#2}{true}
 }
-\newcommand{\mytextcl}[3]{
+\newcommand{\ktutextcl}[3]{
   \begin{figure}[H]
     \begin{center}
       \inputminted[linenos=#3,baselinestretch=1,samepage=false,frame=leftline]{text}{#1}\label{file:#1}
@@ -163,10 +163,10 @@
     \end{center}
   \end{figure}
 }
-\newcommand{\mytextn}[1]{
+\newcommand{\ktutextn}[1]{
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{text}{#1}\label{file:#1}
 }
-\newcommand{\mytext}[1]{
+\newcommand{\ktutext}[1]{
   \begin{figure}[H]
     \begin{center}
       \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{text}{#1}\label{file:#1}
@@ -175,9 +175,9 @@
     \end{center}
   \end{figure}
 }
-\newcommand{\myfigref}[1]{\ref{fig:#1}}
+\newcommand{\ktufigref}[1]{\ref{fig:#1}}
 % filename, width, caption
-\newcommand{\myfigure}[3]{
+\newcommand{\ktufigure}[3]{
   \begin{figure}[H]
     \begin{center}
       \includegraphics[width=#2]{#1}\\
@@ -186,16 +186,16 @@
     \end{center}
   \end{figure}
 }
-\newcommand{\myfigurewidest}[2]{
-    \myfigure{#1}{18cm}{#2}
+\newcommand{\ktufigurewidest}[2]{
+    \ktufigure{#1}{18cm}{#2}
 }
-\newcommand{\mynchapter}[1]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}\chapter*{\MakeUppercase{#1}}\label{sec:#1}}
-\newcommand{\mychapter}[1]{\clearpage\chapter[#1]{\MakeUppercase{#1}}\label{sec:#1}}
-\newcommand{\mysection}[1]{\section[#1]{\MakeUppercase{#1}}\label{sec:#1}}
-\newcommand{\mysubsection}[1]{\subsection[#1]{#1}\label{sec:#1}}
-\newcommand{\mysubsubsection}[1]{\subsubsection[#1]{#1}\label{sec:#1}}
-\newcommand{\mysecref}[1]{\vref{sec:#1}, #1)}
-\newcommand{\mycomment}[1]{}
+\newcommand{\ktunchapter}[1]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}\chapter*{\MakeUppercase{#1}}\label{sec:#1}}
+\newcommand{\ktuchapter}[1]{\clearpage\chapter[#1]{\MakeUppercase{#1}}\label{sec:#1}}
+\newcommand{\ktusection}[1]{\section[#1]{\MakeUppercase{#1}}\label{sec:#1}}
+\newcommand{\ktusubsection}[1]{\subsection[#1]{#1}\label{sec:#1}}
+\newcommand{\ktusubsubsection}[1]{\subsubsection[#1]{#1}\label{sec:#1}}
+\newcommand{\ktusecref}[1]{\vref{sec:#1}, #1)}
+\newcommand{\ktucomment}[1]{}
 \newcommand{\mq}[1]{,,#1\textquotedblleft}
 \algrenewcommand\algorithmicwhile{\textbf{kol}}
 \algrenewcommand\algorithmicdo{\textbf{kartoti}}
@@ -213,7 +213,7 @@
 \restylefloat{algorithm}
 \floatname{algorithm}{Algoritmas}
 \renewcommand{\listalgorithmname}{\MakeUppercase{Algoritmų sąrašas}}
-\NewDocumentEnvironment{myalgo}{m m}{
+\NewDocumentEnvironment{ktualgo}{m m}{
         \begin{algorithm}
             \captionsetup{style=ktualg}
             \caption{#2}\label{algorithm:#1}
@@ -223,9 +223,9 @@
             \end{algorithmic}
         \end{algorithm}
     }
-\newenvironment{myappendices}
+\newenvironment{ktuappendices}
   {
-    \mynchapter{Priedai}
+    \ktunchapter{Priedai}
     \begin{appendices}
       \renewcommand{\thesection}{\arabic{section} priedas.}
       \renewcommand{\thesubsection}{}
@@ -233,7 +233,7 @@
   {
     \end{appendices}
   }
-\newenvironment{mysol}
+\newenvironment{ktusol}
   {$\blacktriangleright$}
   {$\blacktriangleleft$}
 \setlength{\tabcolsep}{1mm}
@@ -267,12 +267,12 @@
 \renewcommand{\cftsubsubsecpagefont}{\normalfont}
 \renewcommand{\cftfigpagefont}{\normalfont}
 \renewcommand{\cfttabpagefont}{\normalfont}
-\renewcommand{\cftchapleader}{\normalfont\titlerule*[\mytocdots]{.}}
-\renewcommand{\cftsecleader}{\normalfont\titlerule*[\mytocdots]{.}}
-\renewcommand{\cftsubsecleader}{\normalfont\titlerule*[\mytocdots]{.}}
-\renewcommand{\cftsubsubsecleader}{\normalfont\titlerule*[\mytocdots]{.}}
-\renewcommand{\cftfigleader}{\normalfont\titlerule*[\mytocdots]{.}}
-\renewcommand{\cfttableader}{\normalfont\titlerule*[\mytocdots]{.}}
+\renewcommand{\cftchapleader}{\normalfont\titlerule*[\ktutocdots]{.}}
+\renewcommand{\cftsecleader}{\normalfont\titlerule*[\ktutocdots]{.}}
+\renewcommand{\cftsubsecleader}{\normalfont\titlerule*[\ktutocdots]{.}}
+\renewcommand{\cftsubsubsecleader}{\normalfont\titlerule*[\ktutocdots]{.}}
+\renewcommand{\cftfigleader}{\normalfont\titlerule*[\ktutocdots]{.}}
+\renewcommand{\cfttableader}{\normalfont\titlerule*[\ktutocdots]{.}}
 \renewcommand{\cftbeforetoctitleskip}{-\baselineskip}
 \renewcommand{\cftaftertoctitleskip}{\baselineskip}
 \renewcommand{\cftbeforeloftitleskip}{-\baselineskip}
@@ -281,17 +281,17 @@
 \renewcommand{\cftafterlottitleskip}{\baselineskip}
 \DeclareFieldFormat[unpublished]{title}{#1}
 \DeclareFieldFormat[unpublished]{citetitle}{#1}
-\newcommand{\myinit}{
+\newcommand{\ktuinit}{
 \pagestyle{ktudarbas}
 \tocloftpagestyle{ktudarbas}
-\title{\mytitle}
-\author{\myauthor}
+\title{\ktutitle}
+\author{\ktuauthor}
 \date{\today}
-\renewcommand{\listfigurename}{\myheading\MakeUppercase{Paveikslų sąrašas}}
-\renewcommand{\listtablename}{\myheading\MakeUppercase{Lentelių sąrašas}}
-\renewcommand{\contentsname}{\myheading\MakeUppercase{Turinys}}
-\renewcommand{\bibname}{\myheading\MakeUppercase{Literatūra}}
-\renewcommand{\refname}{\myheading\MakeUppercase{Literatūra}}
+\renewcommand{\listfigurename}{\ktuheading\MakeUppercase{Paveikslų sąrašas}}
+\renewcommand{\listtablename}{\ktuheading\MakeUppercase{Lentelių sąrašas}}
+\renewcommand{\contentsname}{\ktuheading\MakeUppercase{Turinys}}
+\renewcommand{\bibname}{\ktuheading\MakeUppercase{Literatūra}}
+\renewcommand{\refname}{\ktuheading\MakeUppercase{Literatūra}}
 \normalfont
 
 \begin{titlepage}
@@ -299,20 +299,20 @@
     \includegraphics[width=0.7in]{ktu_logo.eps} \\
     \textbf {
       \fontsize{18pt}{18pt}\selectfont {
-        \MakeUppercase \myinstitution
+        \MakeUppercase \ktuinstitution
       } \\
       \fontsize{16pt}{16pt}\selectfont {
-        \MakeUppercase \myfaculty
+        \MakeUppercase \ktufaculty
       } \\
       \fontsize{14pt}{14pt}\selectfont {
-        \MakeUppercase \mycathedral
+        \MakeUppercase \ktucathedral
       } \\[2.5cm]
       \fontsize{22pt}{22pt}\selectfont {
-        \MakeUppercase \mytitle
+        \MakeUppercase \ktutitle
       } \\[1cm]
     }
     \fontsize{16pt}{16pt}\selectfont {
-      \mysubject
+      \ktusubject
     }
     \\[3.5cm]
   \end{center}
@@ -320,9 +320,9 @@
   \textbf {
     \begin{flushright}
       \begin{tabular}{ r l }
-         {Atliko:} & {\myauthor} \\
-         {Priėmė:} & {\mymaster} \\
-         {Data:} & {\mydate} \\
+         {Atliko:} & {\ktuauthor} \\
+         {Priėmė:} & {\ktumaster} \\
+         {Data:} & {\ktudate} \\
       \end{tabular}
     \end{flushright}
   }
@@ -332,7 +332,7 @@
   \begin{center}
     \textbf {
       \fontsize{16pt}{16pt}\selectfont {
-        \MakeUppercase \mycity, \myyear
+        \MakeUppercase \ktucity, \ktuyear
       }
     }
   \end{center}
@@ -354,7 +354,7 @@
 \AtEndDocument{\ifdefined\there@is@an@algorithm\label{algorithm:was:used:in:doc}\fi}
 \newcommand{\conditionalLoA}{\@ifundefined{r@algorithm:was:used:in:doc}{}{\listofalgorithms}}%
 \makeatother
-\newcommand{\myliterature}{
+\newcommand{\ktuliterature}{
 \renewcommand\mkbibnamelast[1]{\MakeUppercase{##1}}
 \clearpage
 \phantomsection

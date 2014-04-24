@@ -1,3 +1,12 @@
+* [Quick start](#quick-start)
+* [All commands and environments by topic](#all-commands-and-environments-by-topic)
+  * [General](#general)
+  * [Sections](#sections)
+  * [Source code](#source-code)
+  * [Algorithms](#algorithms)
+  * [Figures](#figures)
+  * [Tables](#tables)
+
 # Quick start
 
 1. Ensure that you have `texlive-full`, `texlive-extra`, `texlive-fonts-extra` installed.
@@ -5,13 +14,9 @@
 1. Create some document.tex with `\usepackage{ktua4}` in it.
 1. Use the commands described below.
 
-# Commands and environments provided by this template
+# All commands and environments by topic
 
 ## General
-
-### `\ktuinit`
-
-TODO
 
 ### `\ktuliterature`
 
@@ -34,6 +39,12 @@ TODO
 TODO
 
 ### Environment `ktusol`
+
+TODO
+
+## Title page
+
+### `\ktuinit`
 
 TODO
 

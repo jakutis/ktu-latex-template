@@ -19,29 +19,33 @@
 
 ## General
 
-### `\ktuliterature`
+### Environment `ktuliterature`
 
-TODO
+Insert a list of references.
+Use `\begin{thebibliography}` inside.
+Or use `\printbibliography` if you use BibLaTeX.
 
-### `\mq`
+### `\mq{sample text}`
 
-TODO
+Wrap the "sample text" with nice lithuanian quotes.
 
-### `\cmd`
+### `\cmd{sample text}`
 
-TODO
+Insert the "sample text" in monospace font and with a box around.
 
-### `\ktucomment`
+### `\ktucomment{sample text}`
 
-TODO
+Do not render "sample text" at all.
 
 ### Environment `ktuappendices`
 
-TODO
+Insert a list of appendices.
+Use `\ktusection{example}` for each appendix.
 
 ### Environment `ktusol`
 
-TODO
+Useful to mark the solution of some problem.
+Wraps the text with beginning and ending triangles.
 
 ## Initial pages
 
@@ -101,31 +105,33 @@ The city where the institution, faculty and cathedral is located, for example "K
 
 ## Sections
 
-### `\ktuchaptern`
+### `\ktuchapter{example}`
 
-TODO
+Create a chapter named "example".
 
-### `\ktuchapter`
+### `\ktunchapter{example}`
 
-TODO
+Create a chapter named "example" that does not have a number in the table of contents.
 
-### `\ktusection`
+### `\ktusection{example}`
 
-TODO
+Create a section named "example".
 
-### `\ktusubsection`
+### `\ktusubsection{example}`
 
-TODO
+Create a subsection named "example".
 
-### `\ktusubsubsection`
+### `\ktusubsubsection{example}`
 
-TODO
+Create a subsubsection named "example".
 
-### `\ktusecref`
+### `\ktusecref{example}`
 
-TODO
+Insert a reference to a section named "example".
 
 ## Source code
+
+These commands need your computer to have "pygmentize" command.
 
 ### `\ktusrc`
 

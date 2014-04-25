@@ -10,10 +10,10 @@
 
 # Quick start
 
-1. Ensure that you have `texlive-full`, `texlive-extra`, `texlive-fonts-extra` installed.
+1. Ensure that you have the entire [TeX Live](https://www.tug.org/texlive/) software installed (for Windows download [this installer](http://mirror.ctan.org/systems/texlive/tlnet/install-tl.exe), for Linux - search and install `texlive-full` package).
 1. Copy ktua4.sty and ktulogo.eps files to your project directory.
-1. Create some document.tex with `\usepackage{ktua4}` in it.
-1. Use the commands described below.
+1. Write your `.tex` document with `\usepackage{ktua4}` and the commands described below.
+1. Compile it using `xelatex` with `-shell-escape` flag (if using TeXworks - you need to open `Edit -> Preferences -> Typesetting -> Processing Tools -> XeLaTeX -> Edit...`, press `+` and enter `-shell-escape` and move it with an up arrow so that it is on top - before `$synctexoption`).
 
 # All commands and environments by topic
 

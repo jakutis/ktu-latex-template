@@ -9,11 +9,10 @@
 \newcommand{\ktuauthor}{John Doe}
 \newcommand{\ktumaster}{Jane Roe}
 
-
+  
 \documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits]{report}
-
-
-
+  
+ 
 \usepackage{ktua4}
 
 \begin{document} 
@@ -60,9 +59,9 @@ This is first equation \ref{eq:pirma}.
 
 \ktusection{First section}
 
-\ktufigure{johndoe.pdf}{0.5\textwidth}{this is it}
+%\ktufigure{johndoe.pdf}{0.5\textwidth}{this is it}
 
-\newpage
+\newpage 
 
 \ktusection{Second section}
 \begin{equation}
@@ -74,9 +73,15 @@ This is first equation \ref{eq:pirma}.
 
 %\input{md-sample} 
 
-\ktuliterature{}
+\begin{ktuliterature}
+\begin{thebibliography}{99}
+    \bibitem{NSSI} Tobias Oetiker et. al. \emph{The Not So 
+       Short Introduction to \LaTeXe{}}.
+\end{thebibliography}
+\end{ktuliterature}
 
 \clearpage
+
 \begin{ktuappendices}
 
 \ktusection{Example material}

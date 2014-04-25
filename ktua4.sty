@@ -3,7 +3,8 @@
 \usepackage{mathspec}
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
-\usepackage{bbold}
+%
+%\usepackage{bbold}
 \usepackage{comment}
 \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=1cm]{geometry}
 \usepackage{fancyhdr}
@@ -40,8 +41,8 @@
 \renewcommand{\bibname}{}
 \newcommand{\ktutocdots}{1.5mm}
 \newcommand{\ktuheading}{\bfseries\fontsize{14pt}{14pt}\selectfont}
-\usepackage[pdftitle={\ktutitle},pdfsubject={\ktusubject},pdfauthor={\ktuauthor},unicode=true,colorlinks=false,xetex,bookmarks=true,pdfborder=0,hyperindex=true]{hyperref}
-\usepackage{sagetex}
+\usepackage[pdftitle={\ktutitle },pdfsubject={\ktusubject},pdfauthor={\ktuauthor},unicode=true,colorlinks=false,xetex,bookmarks=true,pdfborder=0,hyperindex=true]{hyperref}
+%\usepackage{sagetex}
 \raggedbottom
 \captionsetup[figure]{name=}
 \captionsetup[table]{name=}
@@ -82,7 +83,7 @@
   \renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright}}
   \renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright}}
 \makeatother
-\DeclareMathOperator*{\cov}{cov}
+%\DeclareMathOperator*{\cov}{cov} 
 \renewcommand{\theenumi}{\alph{enumi})}
 \renewcommand{\labelenumi}{\theenumi}
 \newcommand{\fname}{}
@@ -307,7 +308,7 @@
         \MakeUppercase \ktucathedral
       } \\[2.5cm]
       \fontsize{22pt}{22pt}\selectfont {
-        \MakeUppercase \ktutitle
+        \MakeUppercase \ktutitle 
       } \\[1cm]
     }
     \fontsize{16pt}{16pt}\selectfont {

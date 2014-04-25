@@ -1,4 +1,5 @@
 * [Quick start](#quick-start)
+  * [Minimal example](#minimal-example)
 * [All commands and environments by topic](#all-commands-and-environments-by-topic)
   * [General](#general)
   * [Initial pages](#initial-pages)
@@ -7,13 +8,35 @@
   * [Algorithms](#algorithms)
   * [Figures](#figures)
   * [Tables](#tables)
+* [Additional features](#additional-features)
+  * [Including source code and other text files](#including-source-code-and-other-text-files)
+
 
 # Quick start
 
 1. Ensure that you have the entire [TeX Live](https://www.tug.org/texlive/) software installed (for Windows download [this installer](http://mirror.ctan.org/systems/texlive/tlnet/install-tl.exe), for Linux - search and install `texlive-full` package).
 1. Copy ktua4.sty and ktulogo.eps files to your project directory.
-1. Write your `.tex` document with `\usepackage{ktua4}` and the commands described below.
+1. Write your `.tex` document with `\usepackage{ktua4}` and the commands described below - see minimal example below.
 1. Compile it using `xelatex` with `-shell-escape` flag (if using TeXworks - you need to open `Edit -> Preferences -> Typesetting -> Processing Tools -> XeLaTeX -> Edit...`, press `+` and enter `-shell-escape` and move it with an up arrow so that it is on top - before `$synctexoption`).
+
+## Minimal example
+
+    \newcommand{\ktusubject}{TODO subject}
+    \newcommand{\ktutitle}{TODO title}
+    \newcommand{\ktuyear}{TODO year}
+    \newcommand{\ktudate}{\ktuyear-TODO month-day}
+    \newcommand{\ktucity}{TODO city}
+    \newcommand{\ktuinstitution}{TODO institution}
+    \newcommand{\ktufaculty}{TODO subinstitution}
+    \newcommand{\ktucathedral}{TODO subsubinstitution}
+    \newcommand{\ktuauthor}{TODO author}
+    \newcommand{\ktumaster}{TODO receiver}
+    \documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits, fleqn]{report}
+    \usepackage{ktua4}
+    \begin{document}
+    \ktuinit{}
+    Hello, world!
+    \end{document}
 
 # All commands and environments by topic
 
@@ -203,3 +226,9 @@ TODO
 
 TODO
 
+# Additional features
+
+## Including source code and other text files
+
+1. Download latest version of [Python](https://www.python.org/download/releases/), for example `3.4.0`, and install it - in the "Customize" screen enable the "Add python.exe to Path" option which is under "Python".
+1. Open `Start -> Run` (or press Windows+R keys), enter `pip install Pygments` and press `OK`.

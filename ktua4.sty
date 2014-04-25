@@ -32,7 +32,7 @@
 \usepackage[english]{babel}
 \selectlanguage{english}
 \usepackage[babel=other,spacecolon=false,bibencoding=UTF8,sortlocale=en_US,backend=biber,sorting=none,labelnumber=true,natbib=true,bibstyle=iso-numeric,firstinits=true,citestyle=iso-authoryear,language=english]{biblatex}
-\bibliography{references}
+%\bibliography{references}
 \usemintedstyle{bw}
 \renewcommand{\normalfont}{\sloppy\linespread{1.5}\fontsize{12pt}{12pt}\selectfont}
 \newcommand{\lstsize}{10pt}
@@ -62,8 +62,10 @@
 \renewcommand\thetable{\arabic{chapter}.\arabic{table}}
 \renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
 \renewcommand\thechapter{\arabic{chapter}.}
+
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{3}
+
 \renewcommand\thesection{\thechapter\arabic{section}.}
 \renewcommand\thesubsection{\thesection\arabic{subsection}.}
 \renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}.}
@@ -83,7 +85,8 @@
   \renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright}}
   \renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}{\baselineskip}{\baselineskip}{\ktuheading\raggedright}}
 \makeatother
-%\DeclareMathOperator*{\cov}{cov} 
+
+
 \renewcommand{\theenumi}{\alph{enumi})}
 \renewcommand{\labelenumi}{\theenumi}
 \newcommand{\fname}{}
@@ -354,13 +357,14 @@
 \AtEndDocument{\ifdefined\there@is@an@algorithm\label{algorithm:was:used:in:doc}\fi}
 \newcommand{\conditionalLoA}{\@ifundefined{r@algorithm:was:used:in:doc}{}{\listofalgorithms}}%
 \makeatother
-\newcommand{\ktuliterature}{
+
+\newenvironment{\ktuliterature}{
 \renewcommand\mkbibnamelast[1]{\MakeUppercase{##1}}
 \clearpage
-\phantomsection
 \addcontentsline{toc}{chapter}{Literatūra}
-\printbibliography
-}
+}{}
+
+
 %----------------------- BEGIN KNITR ------------------------------
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)

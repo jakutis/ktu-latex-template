@@ -1,6 +1,6 @@
 \usepackage{xparse}
 \usepackage{amssymb}
-\usepackage{mathspec}
+\usepackage{unicode-math}
 \setmainfont[
     Path           = ./fonts/,
     Extension      = .TTF,
@@ -17,7 +17,6 @@
     ItalicFont     = *i,
     BoldItalicFont = *bi
 ]{cour}
-%\usepackage{bbold}
 \usepackage{comment}
 \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=1cm]{geometry}
 \usepackage{fancyhdr}
@@ -54,7 +53,7 @@
 \renewcommand{\bibname}{}
 \newcommand{\ktutocdots}{1.5mm}
 \newcommand{\ktuheading}{\bfseries\fontsize{14pt}{14pt}\selectfont}
-\usepackage[pdftitle={\ktutitle },pdfsubject={\ktusubject},pdfauthor={\ktuauthor},unicode=true,colorlinks=false,xetex,bookmarks=true,pdfborder=0,hyperindex=true]{hyperref}
+\usepackage[pdftitle={\ktutitle },pdfsubject={\ktusubject},pdfauthor={\ktuauthor},unicode=true,colorlinks=false,bookmarks=true,pdfborder=0,hyperindex=true]{hyperref}
 %\usepackage{sagetex}
 \raggedbottom
 \captionsetup[figure]{name=}

@@ -392,7 +392,7 @@ TODO
 
 ## Markdown and R
 
-This only works on Linux or other Unix-like environments (Mac OS X, Cygwin, FreeBSD, etc.).
+This only works on Linux or other Unix-like environments (Apple OS X, Cygwin, FreeBSD, etc.).
 
 This feature let's you write in [Markdown](http://daringfireball.net/projects/markdown/) syntax and have it included and rendered in your LaTeX document.
 It also dynamically evaluates embedded [R](http://www.r-project.org/) code.

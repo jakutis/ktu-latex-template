@@ -323,7 +323,7 @@ Biblatex enables you to automatically generate list of bibliography from a BibTe
     \end{ktuliterature}
     ```
 
-6. Compile `yourmaintexfile.tex` that contains `\cite{gisslen2011professional` - run `XeLaTeX`, then `biber` (read the following instructions) and then `XeLaTex` again.
+6. Compile `yourmaintexfile.tex` that contains `\cite{gisslen2011professional}` - run `XeLaTeX`, then `biber` (read the following instructions) and then `XeLaTex` again.
 
 ### Windows (using TexWorks)
 

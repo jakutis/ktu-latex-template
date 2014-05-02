@@ -413,12 +413,10 @@ The `citationID` is the same cite id that is in your concrete BibTeX .bib file.
 
 To add R code, use:
 
-```
-```{r}
-1+1
-.4-.7+.3 # what? it is not zero!
-```
-```
+    ```{r}
+    1+1
+    .4-.7+.3 # what? it is not zero!
+    ```
 
 For more syntax documentation look at [knitr minimal example](https://github.com/yihui/knitr-examples/blob/master/001-minimal.Rmd) and [kramdown quick reference](http://kramdown.gettalong.org/quickref.html).
 

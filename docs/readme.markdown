@@ -303,7 +303,7 @@ Creates a reference.
 Inserts the contents of a text file `example.txt` with line numbers.
 Creates a reference.
 
-### `\ktutext`
+### `\ktutext{example.txt}`
 
 Inserts the contents of a text file `example.txt` with line numbers and with a caption "example.txt".
 Creates a reference.

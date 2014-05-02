@@ -288,7 +288,7 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 Biblatex enables you to automatically generate list of bibliography from a BibTeX file.
 
 1. Please download [ISO 960 style for biblatex](https://github.com/michal-h21/biblatex-iso690/archive/master.zip) and extract it into `texmf/tex/latex` directory (texmf is `C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex-iso690-master/iso.bbx` exists.
-2. Make sure you have [lithuanian.lbx](https://github.com/jakutis/ktu-latex-template/blob/master/lithuanian.bdf) file near `ktua4.sty` file or change `language=lithuanian` to `language=english` near `\usepackage[...]{biblatex}`.
+2. Make sure you have [lithuanian.lbx](https://github.com/jakutis/ktu-latex-template/blob/master/lithuanian.lbx) file near `ktua4.sty` file or change `language=lithuanian` to `language=english` near `\usepackage[...]{biblatex}`.
 3.  Create a BibTeX file `yourmaintexfile.bib` with your bibliography, for example:
 
     @Book{gisslen2011professional,

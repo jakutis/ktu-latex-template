@@ -405,7 +405,7 @@ In the instructions below, we assume your main `.tex` file is `paper.tex`.
   * if kramdown is installed with `gem install kramdown`, then `<kramdown_directory>` is something like `/home/username/.rvm/gems/ruby-2.0.0-p195/gems/kramdown-1.0.2/lib/kramdown`
   * if kramdown is installed on Ubuntu with `apt-get install ruby-kramdown`, then `<kramdown_directory>` is something like `/usr/lib/ruby/vendor_ruby/kramdown`
 3. Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable to contain a space-separated list of all `md-<name>.tex` file names for each `<name>.md` file you want to have.
-For example if you have `\input{md-sample.tex}` in `paper.tex` file and you edit `sample.md` file, you must have `MARKDOWN_TO_LATEX := md-sample.tex` line in `Makefile`.
+For example if you have `\input{md-sample}` in `paper.tex` file and you edit `sample.md` file, you must have `MARKDOWN_TO_LATEX := md-sample.tex` line in `Makefile`.
 4. Adjust `paper.pdf` and `paper.tex` filenames in `Makefile` to suit your real names and then run `make paper.pdf` in command line.
 
 To cite in Markdown you just use the bold mode `**citationID**`.
@@ -422,10 +422,25 @@ For more syntax documentation look at [knitr minimal example](https://github.com
 
 ## Sage Math
 
-[Sage Math](http://www.sagemath.org/) code embedding and evaluation with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) commands (see `paper-a4.tex` file).
-[Sage](http://www.sagemath.org/) with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) installed and working.
+This feature let's you embed [Sage Math](http://www.sagemath.org/) code and have the results automatically evaluated and included your document.
 
-TODO
+1. Install [Sage Math](http://www.sagemath.org/).
+1. Copy `SAGE_ROOT/local/share/texmf/tex/generic/sagetex` directory (`SAGE_ROOT` is your Sage installation directory) to `texmf/tex/latex` directory (texmf is `C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/sagetex/sagetex.sty` exists.
+1. Add `\usepackage{sagetex}` before `\begin{document}`.
+1. Include something like this between `\begin{document}` and `\end{document}`:
+
+    ```
+    \begin{sageblock}
+        f(x) = exp(x) * sin(2*x)
+    \end{sageblock}
+
+    Here's a plot of $f$ from $-1$ to $1$:
+
+    \sageplot[width=15cm]{plot(f, -1, 1)}
+    ```
+
+1. Run `xelatex paper.tex` then `sage paper.tex` and then again `xelatex paper.tex`.
+1. For more syntax documentation look at [SageTex tutorial](http://www.sagemath.org/doc/tutorial/sagetex.html).
 
 ## SAS
 

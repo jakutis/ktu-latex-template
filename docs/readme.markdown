@@ -288,9 +288,9 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 Biblatex enables you to automatically generate list of bibliography from a BibTeX file.
 
 1. Please download [ISO 960 style for biblatex](https://github.com/michal-h21/biblatex-iso690/archive/master.zip) and extract it into `texmf/tex/latex` directory (texmf is `C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex-iso690-master/iso.bbx` exists.
-2. Make sure you have [lithuanian.lbx](https://github.com/jakutis/ktu-latex-template/blob/master/lithuanian.lbx) file near `ktua4.sty` file or change `language=lithuanian` to `language=english` near `\usepackage[...]{biblatex}`.
-3.  Create a BibTeX file `yourmaintexfile.bib` with your bibliography, for example:
+2.  Create a BibTeX file `yourmaintexfile.bib` with your bibliography, for example:
 
+    ```
     @Book{gisslen2011professional,
     author="Gisslen, Wayne",
     title="Professional cooking",
@@ -304,17 +304,23 @@ Biblatex enables you to automatically generate list of bibliography from a BibTe
     note="Includes bibliographical references (p. 1059-1060) and indexes.",
     isbn="9780470197523"
     }
+    ```
 
-4. Add the following lines between `\usepackage{ktua4}` and `\begin{document}`:
+3. Add the following lines between `\usepackage{ktua4}` and `\begin{document}`:
 
+    ```
     \usepackage[spacecolon=false,bibencoding=UTF8,sortlocale=en_US,backend=biber,sorting=none,labelnumber=true,natbib=true,bibstyle=iso-numeric,firstinits=true,citestyle=iso-authoryear,language=lithuanian]{biblatex}
     \bibliography{yourmaintexfile}
+    ```
 
+4. Make sure you have [lithuanian.lbx](https://github.com/jakutis/ktu-latex-template/blob/master/lithuanian.lbx) file near `ktua4.sty` file or change `language=lithuanian` to `language=english` near `\usepackage[...]{biblatex}`.
 5. Add the following lines somewhere near before `\end{document}`:
 
+    ```
     \begin{ktuliterature}
         \printbibliography
     \end{ktuliterature}
+    ```
 
 Also, please note that this `lithuanian.lbx` is not completely translated, so if you notice bugs, [create an issue](https://github.com/jakutis/ktu-latex-template/issues).
 6. Compile your pdf - run `XeLaTeX`, then `biber` (read the following instructions) and then `XeLaTex` again.

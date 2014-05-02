@@ -46,6 +46,8 @@
     Hello, world!
     \end{document}
 
+[All examples](https://github.com/jakutis/ktu-latex-template/tree/master/examples).
+
 # All commands and environments by topic
 
 ## General

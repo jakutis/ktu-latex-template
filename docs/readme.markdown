@@ -22,16 +22,16 @@
 
 ## Minimal example
 
-    \newcommand{\ktusubject}{TODO subject}
-    \newcommand{\ktutitle}{TODO title}
-    \newcommand{\ktuyear}{TODO year}
-    \newcommand{\ktudate}{\ktuyear-TODO month-day}
-    \newcommand{\ktucity}{TODO city}
-    \newcommand{\ktuinstitution}{TODO institution}
-    \newcommand{\ktufaculty}{TODO subinstitution}
-    \newcommand{\ktucathedral}{TODO subsubinstitution}
-    \newcommand{\ktuauthor}{TODO author}
-    \newcommand{\ktumaster}{TODO receiver}
+    \newcommand{\ktusubject}{subject}
+    \newcommand{\ktutitle}{title}
+    \newcommand{\ktuyear}{year}
+    \newcommand{\ktudate}{\ktuyear-month-day}
+    \newcommand{\ktucity}{city}
+    \newcommand{\ktuinstitution}{institution}
+    \newcommand{\ktufaculty}{subinstitution}
+    \newcommand{\ktucathedral}{subsubinstitution}
+    \newcommand{\ktuauthor}{author}
+    \newcommand{\ktumaster}{receiver}
     \documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits, fleqn]{report}
     \usepackage{ktua4}
     \begin{document}
@@ -91,57 +91,57 @@ Wraps the text with beginning and ending triangles.
 
 ## Initial pages
 
-### `\ktuinit`
+### `\ktuinit{}`
 
 Automatically generates and inserts a nice full front title page, table of contents, list of figures, list of tables and list of algorithms.
 Lists are inserted only when at least one element of the list type is in a document.
 
-### `\ktuauthor`
+### `\ktuauthor{John Doe}`
 
 The full name of the person who is the author of this document, for example "John Doe".
 
 You must use only regular letters - math formulas and other fancy symbols will not work.
 If you want to use non-regular letters - you have to delete line `\usepackage[pdftitle={\ktutitle}...` line from `ktua4.sty`.
 
-### `\ktumaster`
+### `\ktumaster{prof. Jane Roe}`
 
 The full name with titles of the person who accepts the document or advises to the main author, for example "prof. Jane Roe".
 
-### `\ktutitle`
+### `\ktutitle{Knapsack problem}`
 
 The main title of the document, for example "Knapsack problem".
 
 You must use only regular letters - math formulas and other fancy symbols will not work.
 If you want to use non-regular letters - you have to delete line `\usepackage[pdftitle={\ktutitle}...` line from `ktua4.sty`.
 
-### `\ktusubject`
+### `\ktusubject{Master's thesis}`
 
 Type of this document, a series that this document belongs, for example "Mathematical analysis report #1" or "Master's thesis".
 
 You must use only regular letters - math formulas and other fancy symbols will not work.
 If you want to use non-regular letters - you have to delete line `\usepackage[pdftitle={\ktutitle}...` line from `ktua4.sty`.
 
-### `\ktuyear`
+### `\ktuyear{2014}`
 
 Full year of the document publish date, for example "2014".
 
-### `\ktudate`
+### `\ktudate{2014-04-24}`
 
 Document publish date in ISO 8601 format, for example "2014-04-24".
 
-### `\ktuinstitution`
+### `\ktuinstitution{Kauno technologijos universitetas}`
 
 The institution this document belongs to, for example "Kauno technologijos universitetas".
 
-### `\ktufaculty`
+### `\ktufaculty{Matematikos ir gamtos mokslų fakultetas}`
 
 The faculty of the institution this document belongs to, for example "Matematikos ir gamtos mokslų fakultetas".
 
-### `\ktucathedral`
+### `\ktucathedral{Taikomosios matematikos katedra}`
 
 The cathedral of the faculty of the institution this document belongs to, for example "Taikomosios matematikos katedra".
 
-### `\ktucity`
+### `\ktucity{Kaunas}`
 
 The city where the institution, faculty and cathedral is located, for example "Kaunas".
 
@@ -175,51 +175,53 @@ Insert a reference to a section named "example".
 
 ### Environment `ktualgo`
 
-TODO
+Wraps an algorithms, inserts a caption and creates a reference id.
 
-### `\ktualgoref`
+\begin{ktualgo}{referenceid}{Example ABC algorithm}
+\Procedure{ABC}{$a,b,c,n$}
+    \For{$d$ nuo $0$ iki $b$}
+        \State{$z_0(d) \gets 0$}\Comment{inicializacija}
+    \EndFor{}
+\EndProcedure{}
+\end{ktualgo}
 
-TODO
+### `\ktualgoref{referenceid}`
+
+Inserts a reference to algorithm "referenceid".
+For the algorithm above, use `\ktualgoref{referenceid}`.
 
 ## Figures
 
-### `\ktufigure`
+### `\ktufigure{test.jpg}{18cm}{A test image}`
 
-TODO
+Inserts a picture from `test.jpg` file, makes it 18cm wide (proportions preserved), adds a "A test image" caption and creates a reference.
 
-### `\ktufigref`
+### `\ktufigref{test.jpg}`
 
-TODO
+Insert a reference to a figure with file "test.jpg".
 
-### `\ktufigurewidest`
+### `\ktufigurewidest{test.jpg}{A test image}`
 
-TODO
+Inserts a picture from `test.jpg` file, makes it maximally horizontally wide (proportions preserved), adds a "A test image" caption and creates a reference.
 
-### `\ktutexfigurec`
+### `\ktutexfigure{test.tex}{A test figure}`
 
-TODO
-
-### `\ktutextc`
-
-TODO
-
-### `\ktutextcl`
-
-TODO
-
-### `\ktutextn`
-
-TODO
-
-### `\ktutext`
-
-TODO
+Wraps the contents of `test.tex` file as a figure, adds a "A test figure" caption and creates a reference.
 
 ## Tables
 
-### `\ktutextablec`
+### `\ktutextable{test.tex}{A test table}`
 
-TODO
+Wraps the contents of `test.tex` file as a table, adds a "A test table" caption and creates a reference.
+Example contents of `test.tex`:
+
+    \begin{tabular}{lcl}
+      Vardas & Metai & Formulė \\
+      Niutonas   & 1687 & $F = m a$ \\
+      Einšteinas & 1905 & $E = m c^2$ \\
+    \end{tabular}
+
+To insert a reference for this table use `\vref{tab:test.tex}`.
 
 ### Environment `ktutable`
 
@@ -232,6 +234,8 @@ Wraps a table, inserts a caption and creates a reference id.
           Einšteinas & 1905 & $E = m c^2$ \\
         \end{tabular}
     \end{ktutable}
+
+To insert a reference for this table use `\vref{tab:referenceid}`.
 
 # Additional features
 
@@ -279,6 +283,22 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 1. Open `Start -> Run` (or press Windows+R keys), enter `pip install Pygments` and press `OK`.
 
 Use the commands below.
+
+### `\ktutextc`
+
+TODO
+
+### `\ktutextcl`
+
+TODO
+
+### `\ktutextn`
+
+TODO
+
+### `\ktutext`
+
+TODO
 
 ### `\ktusrc`
 

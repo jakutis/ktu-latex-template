@@ -61,7 +61,7 @@ Use `\begin{thebibliography}` inside:
         \end{thebibliography}
     \end{ktuliterature}
 
-Or use `\printbibliography` if you use Biblatex (see [Biblatex](#biblatex)):
+Or use `\printbibliography` if you use Biblatex (see [Biblatex](#biblatex-hyphenation-and-other-language-features)):
 
     \begin{ktuliterature}
         \printbibliography

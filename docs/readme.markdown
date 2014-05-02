@@ -444,6 +444,35 @@ This feature let's you embed [Sage Math](http://www.sagemath.org/) code and have
 
 ## SAS
 
-Use `sas.tex`.
+1. Save [sas.tex](https://github.com/jakutis/ktu-latex-template/blob/master/sas.tex) near `ktua4.sty` and add `\input{sas}` before `\begin{document}`.
+1. Execute SAS program, for example:
 
-TODO
+    ```
+    data knots;
+      infile '../data1of3/knots.dat';
+      input knot $ 4 rope 7 direction 10 weight 13-15;
+    run;
+    
+    ods tagsets.tablesonlylatex file='body.tex' (notop nobot);
+    proc means data = knots;
+      var weight;
+    run;
+    
+    data knots;
+      set knots;
+      weight_e = weight - 188.9166667;
+    run;
+    
+    filename diag 'a1.wmf';
+    goptions gsfname=diag device=wmf;
+    title 'standartizuotu svoriu nuokrypiu grafikas';
+    proc univariate data = knots normal;
+      var weight_e;
+      probplot / normal(mu=est sigma=est);
+      ods exclude TestsForLocation Quantiles Moments BasicMeasures ExtremeObs;
+    run;
+    ods tagsets.tablesonlylatex close;
+    ```
+
+1. Copy relevant source code from the generated `body.tex` file to your main `.tex` file between `\begin{document}` and `\end{document}`.
+1. Convert generated images (`a1.wmf`) to pdf with [wmf2svg](https://jakut.is/git/DOTFILES/tree/bin/wmf2svg) and [svg2pdf](http://cgit.freedesktop.org/~cworth/svg2pdf/tree/svg2pdf.c) (or just use `device=jpg` in SAS and just copy jpegs) and include them in your main `.tex` file as figures.

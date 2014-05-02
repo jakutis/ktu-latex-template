@@ -234,7 +234,7 @@ TODO
 
 This template does not set the KTU style "Times New Roman" and "Courier New" fonts, because some computers may not have them.
 
-To use the KTU style fonts add the following lines before `\usepackage{ktua4}`:
+To use the KTU style fonts add the following lines after `\usepackage{ktua4}`:
 
     \setmainfont{Times New Roman}
     \setmonofont{Courier New}

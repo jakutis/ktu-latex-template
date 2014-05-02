@@ -268,8 +268,6 @@ Use the [polyglossia](http://ctan.org/pkg/polyglossia) package by adding these l
 If it does not work for you, it is probably because older versions of [biblatex](http://ctan.org/pkg/biblatex) are broken.
 Please download [a newer version](http://downloads.sourceforge.net/project/biblatex/biblatex-2.8/biblatex-2.8a.tds.tgz) and extract it into `texmf` directory (`C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex/biblatex.sty` exists.
 
-1. Extract it into
-
 ## Including source code and other text files
 
 1. Download latest version of [Python](https://www.python.org/download/releases/), for example `3.4.0`, and install it - in the "Customize" screen enable the "Add python.exe to Path" option which is under "Python".

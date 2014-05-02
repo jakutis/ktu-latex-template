@@ -9,6 +9,7 @@
   * [Figures](#figures)
   * [Tables](#tables)
 * [Additional features](#additional-features)
+  * [Fonts](#fonts)
   * [Hyphenation and other language features](#hyphenation-and-other-language-features)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
 
@@ -228,6 +229,34 @@ TODO
 TODO
 
 # Additional features
+
+## Fonts
+
+This template does not set the KTU style "Times New Roman" and "Courier New" fonts, because some computers may not have them.
+
+To use the KTU style fonts add the following lines before `\usepackage{ktua4}`:
+
+    \setmainfont{Times New Roman}
+    \setmonofont{Courier New}
+
+If your computer does not have them, you can [download them](https://github.com/jakutis/ktu-latex-template/archive/master.zip) (move the `fonts` folder near `ktua4.sty`) and then use lines instead of previous two lines:
+
+    \setmainfont[
+        Path           = ./fonts/,
+        Extension      = .TTF,
+        Ligatures      = TeX,
+        BoldFont       = *bd,
+        ItalicFont     = *i,
+        BoldItalicFont = *bi
+    ]{Times}
+    \setmonofont[
+        Path           = ./fonts/,
+        Extension      = .ttf,
+        Ligatures      = TeX,
+        BoldFont       = *bd,
+        ItalicFont     = *i,
+        BoldItalicFont = *bi
+    ]{cour}
 
 ## Hyphenation and other language features
 

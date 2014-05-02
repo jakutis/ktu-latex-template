@@ -14,9 +14,8 @@
   * [Including source code and other text files](#including-source-code-and-other-text-files)
   * [A5 format](#a5-format)
   * [Slides format](#slides-format)
-  * [Markdown](#markdown)
+  * [Markdown and R](#markdown-and-r)
   * [Sage Math](#sage-math)
-  * [R](#r)
   * [SAS](#sas)
 
 # Quick start
@@ -391,32 +390,42 @@ TODO
 
 TODO
 
-## Markdown
+## Markdown and R
 
-[Markdown](http://daringfireball.net/projects/markdown/) syntax (see `sample.md` file).
-[kramdown](http://kramdown.gettalong.org/) installation with the `kramdown-mylatex.rb` file copied to `<kramdown_directory>/converter/latex.rb`:
+This only works on Linux or other Unix-like environments (Mac OS X, Cygwin, FreeBSD, etc.).
 
+This feature let's you write in [Markdown](http://daringfireball.net/projects/markdown/) syntax and have it included and rendered in your LaTeX document.
+It also dynamically evaluates embedded [R](http://www.r-project.org/) code.
+See [sample.md](https://github.com/jakutis/ktu-latex-template/blob/master/sample.md) file.
+
+In the instructions below, we assume your main `.tex` file is `paper.tex`.
+
+1. Install [R](http://www.r-project.org/) with [knitr](http://yihui.name/knitr/) package.
+2. Install [kramdown](http://kramdown.gettalong.org/) with the `kramdown-mylatex.rb` file copied to `<kramdown_directory>/converter/latex.rb`:
   * if kramdown is installed with `gem install kramdown`, then `<kramdown_directory>` is something like `/home/username/.rvm/gems/ruby-2.0.0-p195/gems/kramdown-1.0.2/lib/kramdown`
   * if kramdown is installed on Ubuntu with `apt-get install ruby-kramdown`, then `<kramdown_directory>` is something like `/usr/lib/ruby/vendor_ruby/kramdown`
-
-Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable - it contains a space-separated list of `md-<name>.tex` files that will be created from your own `<name>.md` files.
+3. Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable to contain a space-separated list of all `md-<name>.tex` file names for each `<name>.md` file you want to have.
+For example if you have `\input{md-sample.tex}` in `paper.tex` file and you edit `sample.md` file, you must have `MARKDOWN_TO_LATEX := md-sample.tex` line in `Makefile`.
+4. Adjust `paper.pdf` and `paper.tex` filenames in `Makefile` to suit your real names and then run `make paper.pdf` in command line.
 
 To cite in Markdown you just use the bold mode `**citationID**`.
 The `citationID` is the same cite id that is in your concrete BibTeX .bib file.
 
-TODO
+To add R code, use:
+
+```
+```{r}
+1+1
+.4-.7+.3 # what? it is not zero!
+```
+```
+
+For more syntax documentation look at [knitr minimal example](https://github.com/yihui/knitr-examples/blob/master/001-minimal.Rmd) and [kramdown quick reference](http://kramdown.gettalong.org/quickref.html).
 
 ## Sage Math
 
 [Sage Math](http://www.sagemath.org/) code embedding and evaluation with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) commands (see `paper-a4.tex` file).
 [Sage](http://www.sagemath.org/) with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) installed and working.
-
-TODO
-
-## R
-
-[R](http://www.r-project.org/) code embedding and evaluation in Markdown code blocks (see `sample.md` file).
-[R](http://www.r-project.org/) with [knitr](http://yihui.name/knitr/) package installed and working.
 
 TODO
 

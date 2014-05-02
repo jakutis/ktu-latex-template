@@ -313,7 +313,8 @@ Biblatex enables you to automatically generate list of bibliography from a BibTe
     \bibliography{yourmaintexfile}
     ```
 
-4. Make sure you have [lithuanian.lbx](https://github.com/jakutis/ktu-latex-template/blob/master/lithuanian.lbx) file near `ktua4.sty` file or change `language=lithuanian` to `language=english` near `\usepackage[...]{biblatex}`.
+4. Make sure you have [lithuanian.lbx](https://github.com/jakutis/ktu-latex-template/blob/master/lithuanian.lbx) file near `ktua4.sty` file or change `language=lithuanian` to `language=english` near `\usepackage[...]{biblatex}` (from the above code snippet).
+   Also, please note that this `lithuanian.lbx` is not completely translated, so if you notice bugs, [create an issue](https://github.com/jakutis/ktu-latex-template/issues).
 5. Add the following lines somewhere near before `\end{document}`:
 
     ```
@@ -322,7 +323,6 @@ Biblatex enables you to automatically generate list of bibliography from a BibTe
     \end{ktuliterature}
     ```
 
-Also, please note that this `lithuanian.lbx` is not completely translated, so if you notice bugs, [create an issue](https://github.com/jakutis/ktu-latex-template/issues).
 6. Compile your pdf - run `XeLaTeX`, then `biber` (read the following instructions) and then `XeLaTex` again.
 
 ### Windows (using TexWorks)

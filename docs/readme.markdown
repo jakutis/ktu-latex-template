@@ -384,7 +384,8 @@ Creates a reference.
 
 ## A5 format
 
-TODO
+1. Replace `\usepackage{ktua4}` with `\usepackage{ktua5}` (make sure you have [ktua5.sty](https://github.com/jakutis/ktu-latex-template/blob/master/ktua5.sty) near your main `.tex` file).
+2. Replace `\documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits, fleqn]{report}` with `\documentclass[10pt, a5paper, onecolumn, titlepage, twoside, intlimits, fleqn]{report}`.
 
 ## Slides format
 

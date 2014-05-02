@@ -102,6 +102,7 @@ Wraps the text with beginning and ending triangles.
 
 Automatically generates and inserts a nice full front title page, table of contents, list of figures, list of tables and list of algorithms.
 Lists are inserted only when at least one element of the list type is in a document.
+Do not forget to put a [ktu_logo.eps](https://github.com/jakutis/ktu-latex-template/raw/master/ktu_logo.eps) file near `ktua4.sty`.
 
 ### `\ktuauthor{John Doe}`
 
@@ -408,7 +409,7 @@ TODO
   * if kramdown is installed with `gem install kramdown`, then `<kramdown_directory>` is something like `/home/username/.rvm/gems/ruby-2.0.0-p195/gems/kramdown-1.0.2/lib/kramdown`
   * if kramdown is installed on Ubuntu with `apt-get install ruby-kramdown`, then `<kramdown_directory>` is something like `/usr/lib/ruby/vendor_ruby/kramdown`
 
-Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable - it contains a list of `md-<name>.tex` files that will be created from your own `<name>.md` files.
+Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable - it contains a space-separated list of `md-<name>.tex` files that will be created from your own `<name>.md` files.
 
 To cite in Markdown you just use the bold mode `**citationID**`.
 The `citationID` is the same cite id that is in your concrete BibTeX .bib file.

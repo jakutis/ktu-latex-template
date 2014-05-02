@@ -11,7 +11,10 @@
   * [Fonts](#fonts)
   * [Hyphenation and other language features](#hyphenation-and-other-language-features)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
-
+  * [references.bib generation](#referencesbib generation)
+  * [Markdown](#markdown)
+  * [Sage Math](#sage-math)
+  * [R](#r)
 
 # Quick start
 
@@ -322,3 +325,43 @@ Creates a reference.
 
 Inserts the contents of a file `files/example.py` with Python source code highlighting, with line numbers and with a `\ktusection` header "example.py".
 Creates a reference.
+
+## `references.bib` generation
+
+Relative or absolute path to directory with BibTeX files (.bib filename extension) - this path written to `refdir` file.
+When editing `paper.tex` and needing to cite something you have to open file `references` in your text editor and add a new line `<my_bibtex_file>`, for example `1988 - Brian W. Kernighan, Dennis M. Ritchie - The C Programming Language`.
+Each line in `references` file is a BibTeX file name without extension.
+All BibTeX files are taken from a single directory (you can find its path in `refdir` text file).
+When compiling a pdf, `references` file is parsed and a single `references.bib` file is generated from the listed BibTeX files.
+The `citationID` is the same cite id that is in your concrete BibTeX .bib file.
+
+TODO
+
+## Markdown
+
+[Markdown](http://daringfireball.net/projects/markdown/) syntax (see `sample.md` file).
+[kramdown](http://kramdown.gettalong.org/) installation with the `kramdown-mylatex.rb` file copied to `<kramdown_directory>/converter/latex.rb`:
+
+  * if kramdown is installed with `gem install kramdown`, then `<kramdown_directory>` is something like `/home/username/.rvm/gems/ruby-2.0.0-p195/gems/kramdown-1.0.2/lib/kramdown`
+  * if kramdown is installed on Ubuntu with `apt-get install ruby-kramdown`, then `<kramdown_directory>` is something like `/usr/lib/ruby/vendor_ruby/kramdown`
+
+Open `Makefile` in your text editor and edit `MARKDOWN_TO_LATEX` variable - it contains a list of `md-<name>.tex` files that will be created from your own `<name>.md` files.
+
+To cite in Markdown you just use the bold mode `**citationID**`.
+The `citationID` is the same cite id that is in your concrete BibTeX .bib file.
+
+TODO
+
+## Sage Math
+
+[Sage Math](http://www.sagemath.org/) code embedding and evaluation with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) commands (see `paper-a4.tex` file).
+[Sage](http://www.sagemath.org/) with [SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html) installed and working.
+
+TODO
+
+## R
+
+[R](http://www.r-project.org/) code embedding and evaluation in Markdown code blocks (see `sample.md` file).
+[R](http://www.r-project.org/) with [knitr](http://yihui.name/knitr/) package installed and working.
+
+TODO

@@ -18,6 +18,7 @@
   * [Markdown](#markdown)
   * [Sage Math](#sage-math)
   * [R](#r)
+  * [SAS](#sas)
 
 # Quick start
 
@@ -425,5 +426,11 @@ TODO
 
 [R](http://www.r-project.org/) code embedding and evaluation in Markdown code blocks (see `sample.md` file).
 [R](http://www.r-project.org/) with [knitr](http://yihui.name/knitr/) package installed and working.
+
+TODO
+
+## SAS
+
+Use `sas.tex`.
 
 TODO

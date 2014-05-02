@@ -14,7 +14,6 @@
   * [Including source code and other text files](#including-source-code-and-other-text-files)
   * [A5 format](#a5-format)
   * [Slides format](#slides-format)
-  * [references.bib generation](#referencesbib-generation)
   * [Markdown](#markdown)
   * [Sage Math](#sage-math)
   * [R](#r)
@@ -389,17 +388,6 @@ Creates a reference.
 TODO
 
 ## Slides format
-
-TODO
-
-## `references.bib` generation
-
-Relative or absolute path to directory with BibTeX files (.bib filename extension) - this path written to `refdir` file.
-When editing `paper.tex` and needing to cite something you have to open file `references` in your text editor and add a new line `<my_bibtex_file>`, for example `1988 - Brian W. Kernighan, Dennis M. Ritchie - The C Programming Language`.
-Each line in `references` file is a BibTeX file name without extension.
-All BibTeX files are taken from a single directory (you can find its path in `refdir` text file).
-When compiling a pdf, `references` file is parsed and a single `references.bib` file is generated from the listed BibTeX files.
-The `citationID` is the same cite id that is in your concrete BibTeX .bib file.
 
 TODO
 

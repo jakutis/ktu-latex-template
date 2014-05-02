@@ -118,16 +118,16 @@
   #4{#1}\label{file:#1}
   \inputminted[linenos=true,baselinestretch=1,samepage=false,frame=leftline]{#3}{#2}
 }
-\newcommand{\ktutexfigurec}[2]{
+\newcommand{\ktutexfigure}[2]{
   \begin{figure}[H]
     \begin{center}
       \input{#1}
       \captionsetup{style=ktupav}
-      \caption{#2}
+      \caption{#2}\label{fig:#1}
     \end{center}
   \end{figure}
 }
-\newcommand{\ktutextablec}[2]{
+\newcommand{\ktutextable}[2]{
   \begin{table}[H]
     \captionsetup{style=ktulentele}
     \caption{#2}

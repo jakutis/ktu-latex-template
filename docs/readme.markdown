@@ -47,8 +47,21 @@
 ### Environment `ktuliterature`
 
 Insert a list of references.
-Use `\begin{thebibliography}` inside.
-Or use `\printbibliography` if you use BibLaTeX.
+
+Use `\begin{thebibliography}` inside:
+
+    \begin{ktuliterature}
+        \begin{thebibliography}{99}
+            \bibitem{NSSI} Tobias Oetiker et. al. \emph{The Not So
+               Short Introduction to \LaTeXe{}}.
+        \end{thebibliography}
+    \end{ktuliterature}
+
+Or use `\printbibliography` if you use BibLaTeX:
+
+    \begin{ktuliterature}
+        \printbibliography
+    \end{ktuliterature}
 
 ### `\mq{sample text}`
 
@@ -66,6 +79,11 @@ Do not render "sample text" at all.
 
 Insert a list of appendices.
 Use `\ktusection{example}` for each appendix.
+
+    \begin{ktuappendices}
+    \ktusection{Example material}
+    A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, R, S, T, U, V, Z.
+    \end{ktuappendices}
 
 ### Environment `ktusol`
 
@@ -226,7 +244,15 @@ TODO
 
 ### Environment `ktutable`
 
-TODO
+Wraps a table, inserts a caption and creates a reference id.
+
+    \begin{ktutable}{referenceid}{Random table}
+        \begin{tabular}{lcl}
+          Vardas & Metai & Formulė \\
+          Niutonas   & 1687 & $F = m a$ \\
+          Einšteinas & 1905 & $E = m c^2$ \\
+        \end{tabular}
+    \end{ktutable}
 
 # Additional features
 

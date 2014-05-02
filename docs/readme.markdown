@@ -286,7 +286,7 @@ Use the commands below.
 
 ### `\ktusrcref{example.txt}`
 
-Insert a reference to a file "example.txt".
+Insert a reference to a file `example.txt`.
 
 ### `\ktutextcl{example.txt}{An example text file}{true}`
 

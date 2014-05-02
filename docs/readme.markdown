@@ -284,34 +284,41 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 
 Use the commands below.
 
-### `\ktutextc`
+### `\ktusrcref{example.txt}`
 
-TODO
+Insert a reference to a file "example.txt".
 
-### `\ktutextcl`
+### `\ktutextcl{example.txt}{An example text file}{true}`
 
-TODO
+Inserts the contents of a text file `example.txt` with line numbers (use `false` instead of `true` to hide line numbers) and with a caption "An example text file".
+Creates a reference.
 
-### `\ktutextn`
+### `\ktutextc{example.txt}{An example text file}`
 
-TODO
+Inserts the contents of a text file `example.txt` with line numbers and with a caption "An example text file".
+Creates a reference.
+
+### `\ktutextn{example.txt}`
+
+Inserts the contents of a text file `example.txt` with line numbers.
+Creates a reference.
 
 ### `\ktutext`
 
-TODO
+Inserts the contents of a text file `example.txt` with line numbers and with a caption "example.txt".
+Creates a reference.
 
-### `\ktusrc`
+### `\ktusrc{example.py}{python}`
 
-TODO
+Inserts the contents of a file `example.py` with Python source code highlighting, with line numbers and with a `\ktusubsection` header "example.py".
+Creates a reference.
 
-### `\ktusrcr`
+### `\ktusrcr{example.py}{files/example.py}{python}`
 
-TODO
+Inserts the contents of a file `files/example.py` with Python source code highlighting, with line numbers and with a `\ktusubsection` header "example.py".
+Creates a reference.
 
-### `\ktusrcrh`
+### `\ktusrcrh{example.py}{files/example.py}{python}{\ktusection}`
 
-TODO
-
-### `\ktusrcref`
-
-TODO
+Inserts the contents of a file `files/example.py` with Python source code highlighting, with line numbers and with a `\ktusection` header "example.py".
+Creates a reference.

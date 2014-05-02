@@ -11,7 +11,7 @@
   * [Fonts](#fonts)
   * [Hyphenation and other language features](#hyphenation-and-other-language-features)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
-  * [references.bib generation](#referencesbib generation)
+  * [references.bib generation](#referencesbib-generation)
   * [Markdown](#markdown)
   * [Sage Math](#sage-math)
   * [R](#r)

@@ -4,7 +4,6 @@
   * [General](#general)
   * [Initial pages](#initial-pages)
   * [Sections](#sections)
-  * [Source code](#source-code)
   * [Algorithms](#algorithms)
   * [Figures](#figures)
   * [Tables](#tables)
@@ -172,26 +171,6 @@ Create a subsubsection named "example".
 
 Insert a reference to a section named "example".
 
-## Source code
-
-These commands need your computer to have "pygmentize" command.
-
-### `\ktusrc`
-
-TODO
-
-### `\ktusrcr`
-
-TODO
-
-### `\ktusrcrh`
-
-TODO
-
-### `\ktusrcref`
-
-TODO
-
 ## Algorithms
 
 ### Environment `ktualgo`
@@ -298,3 +277,21 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 
 1. Download latest version of [Python](https://www.python.org/download/releases/), for example `3.4.0`, and install it - in the "Customize" screen enable the "Add python.exe to Path" option which is under "Python".
 1. Open `Start -> Run` (or press Windows+R keys), enter `pip install Pygments` and press `OK`.
+
+Use the commands below.
+
+### `\ktusrc`
+
+TODO
+
+### `\ktusrcr`
+
+TODO
+
+### `\ktusrcrh`
+
+TODO
+
+### `\ktusrcref`
+
+TODO

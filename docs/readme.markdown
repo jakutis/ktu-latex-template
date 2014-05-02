@@ -13,7 +13,6 @@
   * [Biblatex](#biblatex)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
   * [A5 format](#a5-format)
-  * [Slides format](#slides-format)
   * [Markdown and R](#markdown-and-r)
   * [Sage Math](#sage-math)
   * [SAS](#sas)
@@ -386,10 +385,6 @@ Creates a reference.
 
 1. Replace `\usepackage{ktua4}` with `\usepackage{ktua5}` (make sure you have [ktua5.sty](https://github.com/jakutis/ktu-latex-template/blob/master/ktua5.sty) near your main `.tex` file).
 2. Replace `\documentclass[12pt, a4paper, onecolumn, titlepage, oneside, intlimits, fleqn]{report}` with `\documentclass[10pt, a5paper, onecolumn, titlepage, twoside, intlimits, fleqn]{report}`.
-
-## Slides format
-
-TODO
 
 ## Markdown and R
 

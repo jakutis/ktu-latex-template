@@ -10,6 +10,7 @@
 * [Additional features](#additional-features)
   * [Fonts](#fonts)
   * [Hyphenation and other language features](#hyphenation-and-other-language-features)
+  * [Biblatex](#biblatex)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
   * [references.bib generation](#referencesbib-generation)
   * [Markdown](#markdown)
@@ -279,6 +280,10 @@ Use the [polyglossia](http://ctan.org/pkg/polyglossia) package by adding these l
 
 If it does not work for you, it is probably because older versions of [biblatex](http://ctan.org/pkg/biblatex) are broken.
 Please download [a newer version](http://downloads.sourceforge.net/project/biblatex/biblatex-2.8/biblatex-2.8a.tds.tgz) and extract it into `texmf` directory (`C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex/biblatex.sty` exists.
+
+## Biblatex
+
+TODO
 
 ## Including source code and other text files
 

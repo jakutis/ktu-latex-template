@@ -9,6 +9,7 @@
   * [Figures](#figures)
   * [Tables](#tables)
 * [Additional features](#additional-features)
+  * [Hyphenation and other language features](#hyphenation-and-other-language-features)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
 
 
@@ -227,6 +228,18 @@ TODO
 TODO
 
 # Additional features
+
+## Hyphenation and other language features
+
+Use the [polyglossia](http://ctan.org/pkg/polyglossia) package:
+
+    \usepackage{polyglossia}
+    \setdefaultlanguage{lithuanian}
+
+If it does not work for you, it is probably because older versions of [biblatex](http://ctan.org/pkg/biblatex) are broken.
+Please download [a newer version](http://downloads.sourceforge.net/project/biblatex/biblatex-2.8/biblatex-2.8a.tds.tgz) and extract it into `texmf` directory (`C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex/biblatex.sty` exists.
+
+1. Extract it into
 
 ## Including source code and other text files
 

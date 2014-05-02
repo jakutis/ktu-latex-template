@@ -12,6 +12,8 @@
   * [Hyphenation and other language features](#hyphenation-and-other-language-features)
   * [Biblatex](#biblatex)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
+  * [A5 format](#a5-format)
+  * [Slides format](#slides-format)
   * [references.bib generation](#referencesbib-generation)
   * [Markdown](#markdown)
   * [Sage Math](#sage-math)
@@ -371,6 +373,14 @@ Creates a reference.
 
 Inserts the contents of a file `files/example.py` with Python source code highlighting, with line numbers and with a `\ktusection` header "example.py".
 Creates a reference.
+
+## A5 format
+
+TODO
+
+## Slides format
+
+TODO
 
 ## `references.bib` generation
 

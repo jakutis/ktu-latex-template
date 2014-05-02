@@ -9,8 +9,7 @@
   * [Tables](#tables)
 * [Additional features](#additional-features)
   * [Fonts](#fonts)
-  * [Hyphenation and other language features](#hyphenation-and-other-language-features)
-  * [Biblatex](#biblatex)
+  * [Biblatex, hyphenation and other language features](#biblatex-hyphenation-and-other-language-features)
   * [Including source code and other text files](#including-source-code-and-other-text-files)
   * [A5 format](#a5-format)
   * [Markdown and R](#markdown-and-r)
@@ -274,19 +273,16 @@ If your computer does not have them, you can [download them](https://github.com/
         BoldItalicFont = *bi
     ]{cour}
 
-## Hyphenation and other language features
-
-Use the [polyglossia](http://ctan.org/pkg/polyglossia) package by adding these lines *before* `\usepackage{ktua4}`:
-
-    \usepackage{polyglossia}
-    \setdefaultlanguage{lithuanian}
-
-If it does not work for you, it is probably because older versions of [biblatex](http://ctan.org/pkg/biblatex) are broken.
-Please download [a newer version](http://downloads.sourceforge.net/project/biblatex/biblatex-2.8/biblatex-2.8a.tds.tgz) and extract it into `texmf` directory (`C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex/biblatex.sty` exists.
-
-## Biblatex
+## Biblatex, hyphenation and other language features
 
 Biblatex enables you to automatically generate list of bibliography from a BibTeX file and `\cite` commands in your tex file (for more similar commands read [section 3.7 Citation Commands](http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)).
+
+0. Use the [polyglossia](http://ctan.org/pkg/polyglossia) package by adding these lines *before* `\usepackage{ktua4}`:
+
+    ```
+    \usepackage{polyglossia}
+    \setdefaultlanguage{lithuanian}
+    ```
 
 1. Please download [ISO 960 style for biblatex](https://github.com/michal-h21/biblatex-iso690/archive/master.zip) and extract it into `texmf/tex/latex` directory (texmf is `C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex-iso690-master/iso.bbx` exists.
 2.  Create a BibTeX file `yourmaintexfile.bib` with your bibliography, for example:
@@ -325,6 +321,9 @@ Biblatex enables you to automatically generate list of bibliography from a BibTe
     ```
 
 6. Compile `yourmaintexfile.tex` that contains `\cite{gisslen2011professional}` - run `XeLaTeX`, then `biber` (read the following instructions) and then `XeLaTex` again.
+
+If it does not work for you, it is probably because older versions of [biblatex](http://ctan.org/pkg/biblatex) are broken.
+Please download [a newer version](http://downloads.sourceforge.net/project/biblatex/biblatex-2.8/biblatex-2.8a.tds.tgz) and extract it into `texmf` directory (`C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex/biblatex.sty` exists.
 
 ### Windows (using TexWorks)
 

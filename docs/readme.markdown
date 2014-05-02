@@ -62,7 +62,7 @@ Use `\begin{thebibliography}` inside:
         \end{thebibliography}
     \end{ktuliterature}
 
-Or use `\printbibliography` if you use BibLaTeX:
+Or use `\printbibliography` if you use Biblatex (see [Biblatex](#biblatex)):
 
     \begin{ktuliterature}
         \printbibliography
@@ -285,7 +285,7 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 
 ## Biblatex
 
-Biblatex enables you to automatically generate list of bibliography from a BibTeX file.
+Biblatex enables you to automatically generate list of bibliography from a BibTeX file and `\cite` commands in your tex file (for more similar commands read [section 3.7 Citation Commands](http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)).
 
 1. Please download [ISO 960 style for biblatex](https://github.com/michal-h21/biblatex-iso690/archive/master.zip) and extract it into `texmf/tex/latex` directory (texmf is `C:/Users/username/texmf` on Windows, `/home/username/texmf` on Linux) so that file `texmf/tex/latex/biblatex-iso690-master/iso.bbx` exists.
 2.  Create a BibTeX file `yourmaintexfile.bib` with your bibliography, for example:

@@ -99,7 +99,7 @@ Wraps the text with beginning and ending triangles.
 ### `\ktuinit{}`
 
 Automatically generates and inserts a nice full front title page, table of contents, list of figures, list of tables and list of algorithms.
-Lists are inserted only when at least one element of the list type is in a document.
+Lists are inserted only when at least one element of the list type is in the document.
 Do not forget to put a [ktu_logo.eps](https://github.com/jakutis/ktu-latex-template/raw/master/ktu_logo.eps) file near `ktua4.sty`.
 
 ### `\ktuauthor{John Doe}`
@@ -181,15 +181,15 @@ Insert a reference to a section named "example".
 
 ### Environment `ktualgo`
 
-Wraps an algorithms, inserts a caption and creates a reference id.
+Wraps an algorithm, inserts a caption and creates a reference id.
 
-\begin{ktualgo}{referenceid}{Example ABC algorithm}
-\Procedure{ABC}{$a,b,c,n$}
-    \For{$d$ nuo $0$ iki $b$}
-        \State{$z_0(d) \gets 0$}\Comment{inicializacija}
-    \EndFor{}
-\EndProcedure{}
-\end{ktualgo}
+    \begin{ktualgo}{referenceid}{Example ABC algorithm}
+    \Procedure{ABC}{$a,b,c,n$}
+        \For{$d$ nuo $0$ iki $b$}
+            \State{$z_0(d) \gets 0$}\Comment{inicializacija}
+        \EndFor{}
+    \EndProcedure{}
+    \end{ktualgo}
 
 ### `\ktualgoref{referenceid}`
 

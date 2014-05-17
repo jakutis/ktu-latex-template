@@ -338,10 +338,13 @@ Please download [a newer version](http://downloads.sourceforge.net/project/bibla
 
 ## Including source code and other text files
 
-1. Download latest version of [Python](https://www.python.org/download/releases/), for example `3.4.0`, and install it - in the "Customize" screen enable the "Add python.exe to Path" option which is under "Python".
-1. Open `Start -> Run` (or press Windows+R keys), enter `pip install Pygments` and press `OK`.
-
-Use the commands below.
+1. Install
+  * on Windows:
+    1. Download latest version of [Python](https://www.python.org/download/releases/), for example `3.4.0`, and install it - in the "Customize" screen enable the "Add python.exe to Path" option which is under "Python".
+    1. Open `Start -> Run` (or press Windows+R keys), enter `pip install Pygments` and press `OK`.
+  * on Linux:
+    1. search and install package `python-pygments` with your package manager
+2. Use the commands below.
 
 ### `\ktusrcref{example.txt}`
 

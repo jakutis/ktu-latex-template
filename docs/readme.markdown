@@ -191,6 +191,8 @@ Wraps an algorithm, inserts a caption and creates a reference id.
     \EndProcedure{}
     \end{ktualgo}
 
+For the help about the commands to describe the algorithm (e.g. `\Procedure`, `\For`, `\State`, etc.) please refer to the documentation of [package "algorithms"](http://www.ctan.org/pkg/algorithms).
+
 ### `\ktualgoref{referenceid}`
 
 Inserts a reference to algorithm "referenceid".
